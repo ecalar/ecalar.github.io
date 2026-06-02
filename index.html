@@ -94,7 +94,7 @@
             color: var(--text-muted);
             margin-bottom: 4rem;
             font-size: 1.1rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-inline: auto;
         }
 
@@ -186,10 +186,13 @@
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 2rem;
+            animation: pulse-border 2s infinite;
         }
 
-        .badge i {
-            font-size: 0.8rem;
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
 
         .hero h1 {
@@ -246,30 +249,55 @@
             z-index: 1;
         }
 
-        /* --- SOBRE MÍ & ENFOQUE --- */
+        /* --- SOBRE MÍ REDISEÑADO --- */
         section {
             padding: 6rem 0;
         }
 
-        .about-grid {
+        .about-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        /* Tarjetas de Filosofía (Grid de 3) */
+        .philosophy-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .about-content {
-            padding: 3rem;
+        .philosophy-card {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: var(--transition);
         }
 
-        .about-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .philosophy-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.3rem;
             color: #fff;
         }
 
-        .about-content p {
+        .philosophy-card p {
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
             font-weight: 300;
         }
 
@@ -278,30 +306,40 @@
             padding: 3rem;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
         .timeline-item {
             position: relative;
-            padding-left: 2rem;
+            padding-left: 2.5rem;
             border-left: 2px solid var(--glass-border);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -7px;
+            left: -8px;
             top: 5px;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            background: var(--accent-purple);
-            box-shadow: 0 0 10px var(--accent-purple);
+            background: var(--accent-blue);
+            box-shadow: 0 0 15px var(--accent-blue);
         }
 
         .timeline-date {
             font-size: 0.85rem;
-            color: var(--accent-blue);
+            color: var(--accent-cyan);
             font-weight: 600;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
@@ -309,15 +347,16 @@
         }
 
         .timeline-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #fff;
             margin-bottom: 0.5rem;
         }
 
         .timeline-desc {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-muted);
+            font-weight: 300;
         }
 
         /* --- ÁREAS DE ESPECIALIZACIÓN (SKILLS) --- */
@@ -412,6 +451,20 @@
             font-size: 1.4rem;
             margin-bottom: 1rem;
             color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .project-card p {
@@ -428,43 +481,6 @@
             font-family: monospace;
             font-size: 0.85rem;
             color: var(--accent-purple);
-        }
-
-        /* --- INTERESES (EXTRAS) --- */
-        .hobbies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .hobby-card {
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .hobby-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--accent-cyan);
-            flex-shrink: 0;
-        }
-
-        .hobby-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .hobby-info p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
         }
 
         /* --- FOOTER --- */
@@ -500,9 +516,6 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -528,7 +541,7 @@
         <!-- 1. HERO SECTION -->
         <section class="hero">
             <div class="hero-text">
-                <div class="badge"><i class="fas fa-code"></i> Estudiante DAM</div>
+                <div class="badge"><i class="fas fa-briefcase"></i> Buscando Prácticas FCT (Remoto)</div>
                 <h1>Enrique <br><span>Cala.</span></h1>
                 <p>Desarrollador de software especializado en el ecosistema Java y Spring Boot. Construyo lógica de negocio robusta e interfaces de escritorio impecables desde mi entorno Linux Mint.</p>
             </div>
@@ -539,33 +552,50 @@
             </div>
         </section>
 
-        <!-- 2. SOBRE MÍ Y TRAYECTORIA -->
+        <!-- 2. SOBRE MÍ REDISEÑADO -->
         <section id="about">
-            <h2 class="section-title">Mi Perfil</h2>
-            <p class="section-subtitle">Una visión integral desde la estructura del hardware y la estética del diseño, hasta la arquitectura del software.</p>
+            <h2 class="section-title">El Perfil Completo</h2>
+            <p class="section-subtitle">No soy un programador tradicional. He recorrido los tres pilares de la informática, lo que me permite entender el software desde el hardware hasta el usuario final.</p>
             
-            <div class="about-grid">
-                <div class="glass-panel about-content">
-                    <h3>Más allá del código</h3>
-                    <p>Mi enfoque en el desarrollo de software (multiplataforma) se enriquece gracias a mi background multidisciplinar. Entiendo la máquina desde su nivel físico, domino la creación visual gracias a mi experiencia en diseño y modelado, y actualmente centralizo todo ese conocimiento lógico en la programación estructurada.</p>
-                    <p>Soy un firme defensor del código limpio, la arquitectura hexagonal y de las interfaces abstractas y minimalistas, donde la funcionalidad dicta el diseño. Trabajo a diario con herramientas de JetBrains, dominando mi sistema operativo principal para maximizar la productividad.</p>
+            <div class="about-layout">
+                <!-- Tarjetas de Filosofía -->
+                <div class="philosophy-grid">
+                    <div class="glass-panel philosophy-card">
+                        <i class="fas fa-layer-group philosophy-icon"></i>
+                        <h3>Visión 360º</h3>
+                        <p>Comencé montando y configurando redes (Microinformática), pasé por el diseño y la experiencia de usuario (Animación 3D), y ahora centralizo todo en la lógica del desarrollo (DAM). Entiendo las limitaciones de la máquina y las necesidades del usuario.</p>
+                    </div>
+                    
+                    <div class="glass-panel philosophy-card">
+                        <i class="fas fa-code philosophy-icon"></i>
+                        <h3>Código & Estructura</h3>
+                        <p>Me obsesiona el 'Clean Code' y la arquitectura bien definida. Aunque mi núcleo fuerte es el Backend con Java y Spring Boot, disfruto enormemente creando el Frontend para lograr una sinergia perfecta entre una base de datos sólida y una interfaz visual atractiva.</p>
+                    </div>
+
+                    <div class="glass-panel philosophy-card">
+                        <i class="fas fa-compass drafting philosophy-icon"></i>
+                        <h3>Metodología</h3>
+                        <p>Nunca empiezo a picar código a ciegas. Soy un firme creyente de la planificación previa: estructuro el proyecto, diseño la base de datos y planteo la arquitectura antes de abrir el IDE. Planificar bien ahorra horas de refactorización.</p>
+                    </div>
                 </div>
 
+                <!-- Timeline de Evolución -->
                 <div class="glass-panel timeline">
+                    <h3 class="timeline-header">Mi Evolución Formativa</h3>
                     <div class="timeline-item">
                         <div class="timeline-date">Actualidad</div>
                         <div class="timeline-title">CFGS Desarrollo de Aplicaciones Multiplataforma</div>
-                        <div class="timeline-desc">Ilerna Online. Especialización práctica en Java, estructuras de datos, gestión de bases de datos e interfaces de usuario.</div>
+                        <div class="timeline-desc">Ilerna Online. Especialización pura en desarrollo, algoritmos, bases de datos relacionales y POO enfocada en Java.</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2013 - 2020</div>
                         <div class="timeline-title">Animación 3D, Juegos y Entornos Interactivos</div>
-                        <div class="timeline-desc">Ciclo Formativo de Grado Superior. Desarrollo de lógica interactiva, diseño de interfaces y assets visuales.</div>
+                        <div class="timeline-desc">CFGS. El lado visual: desarrollo de lógica interactiva, diseño de interfaces, assets 2D/3D y experiencia de usuario.</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Background</div>
                         <div class="timeline-title">Sistemas Microinformáticos y Redes</div>
-                        <div class="timeline-desc">Ciclo Formativo de Grado Medio. Sólida base en hardware, redes locales y administración de sistemas operativos.</div>
+                        <div class="timeline-desc">CFGM. La base física: sólida comprensión del hardware, administración de sistemas operativos y arquitecturas de red.</div>
                     </div>
                 </div>
             </div>
@@ -574,7 +604,7 @@
         <!-- 3. ÁREAS DE ESPECIALIZACIÓN -->
         <section id="skills">
             <h2 class="section-title">Especialización</h2>
-            <p class="section-subtitle">Tecnologías y herramientas que conforman mi ecosistema de trabajo diario.</p>
+            <p class="section-subtitle">Las tecnologías y herramientas con las que trabajo a diario para dar vida a los proyectos.</p>
             
             <div class="skills-grid">
                 <div class="glass-panel skill-card">
@@ -606,27 +636,27 @@
                         <li>Linux Mint</li>
                         <li>IntelliJ IDEA</li>
                         <li>Git & GitHub</li>
-                        <li>Metodologías Ágiles</li>
+                        <li>Planificación de Proyectos</li>
                     </ul>
                 </div>
 
                 <div class="glass-panel skill-card">
                     <i class="fas fa-bezier-curve skill-icon"></i>
-                    <h4>Diseño & Assets</h4>
+                    <h4>Diseño Visual</h4>
                     <ul class="skill-list">
                         <li>Vectores 2D Planos</li>
                         <li>Assets para Móviles</li>
-                        <li>Conceptos de Animación 3D</li>
-                        <li>Identidad Visual</li>
+                        <li>Identidad Visual Lógica</li>
+                        <li>Prototipado de Interfaces</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 4. ARCHIVO DE PROYECTOS (MEGA GRID) -->
+        <!-- 4. ARCHIVO DE PROYECTOS -->
         <section id="projects">
             <h2 class="section-title">Proyectos Destacados</h2>
-            <p class="section-subtitle">Aplicaciones de gestión, diseño de software a medida y prototipado visual.</p>
+            <p class="section-subtitle">Aplicaciones orientadas a la gestión, diseño a medida y prototipado visual.</p>
             
             <div class="projects-grid">
                 
@@ -653,8 +683,8 @@
                             <a href="https://github.com/ecalar" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
-                    <h3>CanaryPro</h3>
-                    <p>Software profesional desarrollado a medida para la gestión de aviarios y cría en canaricultura. Control de genealogía, alimentación y seguimiento clínico de ejemplares.</p>
+                    <h3>CanaryPro <span class="status-tag">WIP</span></h3>
+                    <p>Software profesional en desarrollo para la gestión de aviarios y cría en canaricultura. Enfocado en el control de genealogía, alimentación y seguimiento clínico de ejemplares.</p>
                     <div class="tech-tags">
                         <span>Java</span> <span>BBDD</span> <span>Lógica de Negocio</span>
                     </div>
@@ -669,7 +699,7 @@
                         </div>
                     </div>
                     <h3>Gestión Carpintería</h3>
-                    <p>Aplicación de escritorio conectada a backend robusto para digitalizar talleres de carpintería. Incluye control de stock de maderas, facturación y cartera de clientes.</p>
+                    <p>Aplicación de escritorio para digitalizar talleres de carpintería. Incluye control de stock de maderas, elaboración de presupuestos y cartera de clientes.</p>
                     <div class="tech-tags">
                         <span>Spring Boot</span> <span>Swing</span> <span>MySQL</span>
                     </div>
@@ -684,7 +714,7 @@
                         </div>
                     </div>
                     <h3>Game Assets 2D</h3>
-                    <p>Diseño de ilustraciones vectoriales planas, paletas de colores limpios e iconos UI/UX para prototipos de videojuegos móviles de gestión (temática procesional/cultural).</p>
+                    <p>Diseño de ilustraciones vectoriales planas, paletas de colores sólidos e iconos UI/UX para prototipos de videojuegos móviles de gestión (temática cultural/procesional).</p>
                     <div class="tech-tags">
                         <span>Vector Flat 2D</span> <span>UI/UX</span> <span>Mobile</span>
                     </div>
@@ -699,7 +729,7 @@
                         </div>
                     </div>
                     <h3>Sistema HR</h3>
-                    <p>Software para la administración eficiente de recursos humanos, control de nóminas, perfiles de empleados y jerarquías departamentales.</p>
+                    <p>Software conectado a base de datos relacional para la administración eficiente de recursos humanos, control de nóminas y perfiles de empleados.</p>
                     <div class="tech-tags">
                         <span>JavaFX</span> <span>MVC</span>
                     </div>
@@ -714,35 +744,12 @@
                         </div>
                     </div>
                     <h3>Gestión Biblioteca</h3>
-                    <p>Sistema clásico para control de préstamos literarios, gestión de socios y catálogo estructurado aplicando patrones de diseño limpio.</p>
+                    <p>Sistema clásico para control de préstamos literarios, gestión de socios y catálogo estructurado aplicando buenas prácticas y código limpio.</p>
                     <div class="tech-tags">
                         <span>Java</span> <span>SQL</span>
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- 5. INTERESES (El lado humano y analítico) -->
-        <section id="hobbies">
-            <h2 class="section-title">Atención al Detalle</h2>
-            <p class="section-subtitle">Habilidades complementarias que demuestran mi capacidad analítica y resolución de problemas fuera del IDE.</p>
-            
-            <div class="hobbies-grid">
-                <div class="glass-panel hobby-card">
-                    <div class="hobby-icon"><i class="fas fa-microchip"></i></div>
-                    <div class="hobby-info">
-                        <h4>Electrónica y Domótica</h4>
-                        <p>Diseño y ejecución de esquemas de cableado eléctrico, aplicando la misma precisión métrica y normativa que uso al estructurar código.</p>
-                    </div>
-                </div>
-                <div class="glass-panel hobby-card">
-                    <div class="hobby-icon"><i class="fas fa-feather"></i></div>
-                    <div class="hobby-info">
-                        <h4>Canaricultura</h4>
-                        <p>Gestión genética y cría selectiva. Un hobby que requiere alta disciplina, control de variables y que inspiró la creación de mi propio software (CanaryPro).</p>
-                    </div>
-                </div>
             </div>
         </section>
 
