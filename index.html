@@ -3,235 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrique Cala | Desarrollador de Software</title>
-    <!-- Font Awesome para iconos de marcas y UI -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts: Inter para lectura clara -->
+    <title>Enrique Cala | Estudiante DAM</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome para Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-body: #121212; /* Gris casi negro muy oscuro */
-            --bg-card: #1e1e1e; /* Gris oscuro para tarjetas */
-            --text-main: #e0e0e0;
-            --text-muted: #a0a0a0;
-            --accent: #007BFF; /* Azul eléctrico */
-            --accent-glow: rgba(0, 123, 255, 0.3);
-            --border: #333333;
-            --success: #28a745;
-            --transition: all 0.3s ease;
+            --bg-base: #050505;
+            --text-main: #f8f9fa;
+            --text-muted: #adb5bd;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: var(--bg-base);
             color: var(--text-main);
+            overflow-x: hidden;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Luces de fondo (Blobs) para dar el toque visual sin saturar */
+        .bg-glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s infinite alternate;
+        }
+        .glow-1 {
+            top: -10%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--accent-blue), transparent 70%);
+        }
+        .glow-2 {
+            bottom: -10%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--accent-purple), transparent 70%);
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 50px); }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* --- Header --- */
-        header {
-            padding: 2rem 0;
+        /* --- NAV / HEADER --- */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-icon {
+        .logo {
             font-size: 1.5rem;
-            color: var(--accent);
             font-weight: 800;
+            background: linear-gradient(to right, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
         }
 
-        .logo-text {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
         }
 
-        .status-badge {
-            background-color: rgba(40, 167, 69, 0.1);
-            color: var(--success);
-            padding: 0.5rem 1rem;
-            border-radius: 99px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .icon-btn {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            border: 1px solid rgba(40, 167, 69, 0.2);
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
         }
 
-        .status-dot {
-            height: 8px;
-            width: 8px;
-            background-color: var(--success);
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 10px var(--success);
-            animation: pulse 2s infinite;
+        .icon-btn:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
         }
 
-        /* --- Hero Section --- */
+        /* --- HERO --- */
         .hero {
-            padding: 6rem 0;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 4rem;
-            border-bottom: 1px solid var(--border);
         }
 
-        .hero-content {
+        .hero-text {
             flex: 1;
-            max-width: 650px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50px;
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(3rem, 5vw, 4.5rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
 
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: white;
-            box-shadow: 0 4px 15px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            background-color: #0069d9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--accent-glow);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--border);
-            color: var(--text-main);
-        }
-
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: var(--text-muted);
-        }
-
-        .hero-photo-container {
+        /* Imagen de Perfil */
+        .hero-img-wrapper {
             position: relative;
-            flex-shrink: 0;
+            width: 350px;
+            height: 350px;
         }
 
-        /* Placeholder para tu foto */
-        .hero-photo {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--bg-card);
-            box-shadow: 0 0 30px var(--accent-glow);
-            background-color: #333; /* Fondo si no hay imagen */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hero-photo-glow {
+        .hero-img-wrapper::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 110%;
-            height: 110%;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
+            inset: -5px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             z-index: -1;
+            opacity: 0.5;
+            filter: blur(15px);
         }
 
-        /* --- Secciones Generales --- */
-        section {
-            padding: 6rem 0;
-            border-bottom: 1px solid var(--border);
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 2px solid rgba(255,255,255,0.1);
+            background-color: #111; /* Color de fondo mientras carga */
         }
 
+        /* --- PROYECTOS --- */
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 4rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
-        .section-title span {
-            color: var(--text-muted);
-            font-weight: 400;
-            font-size: 1.2rem;
-        }
-
-        /* --- Proyectos --- */
-        .projects-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-bottom: 6rem;
         }
 
-        .project-card {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid var(--border);
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -239,332 +217,228 @@
             overflow: hidden;
         }
 
-        .project-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .project-icon-container {
-            font-size: 3rem;
+        .card-icon {
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            color: var(--accent);
-            /* Simulación visual de iconos 3D con sombras y gradientes */
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
-        .project-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: white;
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .project-card p {
+        .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .project-tech-stack {
-            display: flex;
-            gap: 0.75rem;
             margin-bottom: 1.5rem;
-            flex-wrap: wrap;
+            flex-grow: 1;
+            font-weight: 300;
         }
 
-        .tech-icon {
-            font-size: 1.25rem;
+        .tags {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tags span {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.05);
             color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .card-link {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .card:hover .card-link {
+            color: var(--accent-blue);
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        /* --- STACK --- */
+        .stack-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .stack-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 1rem;
             transition: var(--transition);
         }
 
-        .project-card:hover .tech-icon {
-            color: var(--accent);
+        .stack-item:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent-purple);
         }
 
-        .project-link {
-            font-size: 0.9rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: auto;
-        }
-
-        .project-link:hover {
-            color: white;
-        }
-
-        /* --- About/Stack --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .stack-card {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            border: 1px solid var(--border);
-        }
-
-        .stack-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .stack-header-icon {
-            color: var(--accent);
+        .stack-item i {
             font-size: 1.5rem;
+            color: var(--accent-purple);
         }
 
-        .stack-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .stack-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .stack-list li::before {
-            content: '●';
-            color: var(--accent);
-            font-size: 0.7rem;
-        }
-
-        /* --- Footer --- */
+        /* --- FOOTER --- */
         footer {
-            padding: 3rem 0;
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 1px solid var(--glass-border);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-links {
-            display: flex;
             gap: 2rem;
         }
 
-        .footer-links a {
+        .footer-text {
             color: var(--text-muted);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
+            font-size: 0.9rem;
+            font-weight: 300;
         }
 
-        .footer-links a:hover {
-            color: white;
-        }
-
-        /* --- Animaciones y Media Queries --- */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
-        }
-
-        @media (max-width: 992px) {
+        /* Responsive */
+        @media (max-width: 900px) {
             .hero {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 text-align: center;
-                gap: 2rem;
+                padding: 4rem 0;
             }
-            .hero-photo {
-                width: 250px;
-                height: 250px;
-            }
-            .hero-btns {
-                justify-content: center;
-            }
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header, footer {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
+            .hero p {
+                margin: 0 auto 2rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Fondos animados -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
     <div class="container">
-        <header>
-            <div class="logo-container">
-                <div class="logo-icon">EC</div>
-                <div class="logo-text">Enrique Cala</div>
+        <!-- CABECERA SOLO ICONOS -->
+        <nav>
+            <div class="logo">Enrique Cala.</div>
+            <div class="social-icons">
+                <a href="mailto:enriquecalar@gmail.com" class="icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/ecalar" target="_blank" class="icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enrique-cala-rodr%C3%ADguez-21032491/" target="_blank" class="icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <div class="status-badge">
-                <span class="status-dot"></span>
-                Disponible para 100% Remoto
-            </div>
-        </header>
+        </nav>
 
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <h1>Desarrollador<br>de Software.</h1>
-                <p>Estudiante DAM centrado en backend y aplicaciones de escritorio eficientes desde Linux. Buscando activamente prácticas FCT en entorno remoto.</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Descargar CV</a>
-                    <a href="https://github.com/ecalar" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver GitHub</a>
-                </div>
+        <!-- SECCIÓN PRINCIPAL -->
+        <section class="hero">
+            <div class="hero-text">
+                <div class="badge">Prácticas FCT Remoto</div>
+                <h1>Desarrollador <br><span>Software.</span></h1>
+                <p>Estudiante DAM enfocado en la construcción de lógica de negocio sólida e interfaces de escritorio impecables. Trabajo diario bajo entorno Linux y herramientas JetBrains.</p>
             </div>
-            <div class="hero-photo-container">
-                <div class="hero-photo-glow"></div>
-                <!-- REEMPLAZA EL SRC CON LA RUTA A TU FOTO -->
-                <img src="tu-foto.jpg" alt="Enrique Cala" class="hero-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <!-- Placeholder visual si la imagen falla -->
-                <div class="hero-photo" style="display:none; flex-direction:column;">
-                    <i class="fas fa-user-circle" style="font-size:5rem; margin-bottom:1rem;"></i>
-                    [Tu foto aquí]
-                </div>
+            <div class="hero-img-wrapper">
+                <!-- AQUÍ VA TU FOTO -->
+                <img src="assets/img/avatar.jpg" alt="Enrique Cala" class="hero-img" onerror="this.src='https://ui-avatars.com/api/?name=EC&background=111&color=fff&size=400'">
             </div>
         </section>
 
-        <section id="projects">
-            <h2 class="section-title">Proyectos <span>(Archivo de Proyectos)</span></h2>
-            <div class="projects-grid">
-                
-                <!-- MiStock Pro -->
-                <div class="project-card">
-                    <div class="project-icon-container">
-                        <!-- Icono visualmente rico simulando 3D -->
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>MiStock Pro</h3>
-                    <p>Sistema de gestión de inventario personalizable. Interfaz abstracta y minimalista centrada en la funcionalidad pura.</p>
-                    <div class="project-tech-stack">
-                        <!-- Reemplazar con iconos reales si se desea -->
-                        <i class="fab fa-java tech-icon" title="Java"></i>
-                        <i class="fas fa-desktop tech-icon" title="Swing"></i>
-                    </div>
-                    <a href="https://github.com/ecalar" class="project-link" target="_blank"><i class="fas fa-code"></i> Ver Código</a>
+        <!-- PROYECTOS -->
+        <h2 class="section-title">Archivo de Proyectos</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <a href="https://github.com/ecalar" target="_blank" class="card-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <i class="fas fa-box-open card-icon"></i>
+                <h3>MiStock Pro</h3>
+                <p>Sistema de gestión de inventario como proyecto de fin de grado. Interfaz gráfica abstracta y minimalista.</p>
+                <div class="tags">
+                    <span>Java</span>
+                    <span>Swing</span>
                 </div>
-
-                <!-- Gestión de Carpintería -->
-                <div class="project-card">
-                    <div class="project-icon-container">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Gestión de<br>Carpintería</h3>
-                    <p>Software integral para negocios del sector. Control de materiales, presupuestos y administración de clientes.</p>
-                    <div class="project-tech-stack">
-                        <i class="fab fa-java tech-icon" title="Java"></i>
-                        <i class="fas fa-leaf tech-icon" title="Spring Boot"></i>
-                        <i class="fas fa-desktop tech-icon" title="Swing"></i>
-                    </div>
-                    <a href="https://github.com/ecalar" class="project-link" target="_blank"><i class="fas fa-code"></i> Ver Código</a>
-                </div>
-
-                <!-- Sistema HR -->
-                <div class="project-card">
-                    <div class="project-icon-container">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3>Sistema HR</h3>
-                    <p>Aplicación de escritorio conectada a DB relacional para administración de empleados, RRHH y nóminas.</p>
-                    <div class="project-tech-stack">
-                        <i class="fab fa-java tech-icon" title="Java"></i>
-                        <i class="fas fa-window-restore tech-icon" title="JavaFX"></i>
-                    </div>
-                    <a href="https://github.com/ecalar" class="project-link" target="_blank"><i class="fas fa-code"></i> Ver Código</a>
-                </div>
-
-                <!-- Gestión de Biblioteca -->
-                <div class="project-card">
-                    <div class="project-icon-container">
-                        <i class="fas fa-book-reader"></i>
-                    </div>
-                    <h3>Gestión de<br>Biblioteca</h3>
-                    <p>Control modular de préstamos, catálogo y usuarios. Diseño centrado en arquitectura limpia.</p>
-                    <div class="project-tech-stack">
-                        <i class="fab fa-java tech-icon" title="Java"></i>
-                        <i class="fas fa-database tech-icon" title="SQL"></i>
-                    </div>
-                    <a href="https://github.com/ecalar" class="project-link" target="_blank"><i class="fas fa-code"></i> Ver Código</a>
-                </div>
-
             </div>
-        </section>
 
-        <section id="about">
-            <h2 class="section-title">About/Stack</h2>
-            <div class="about-grid">
-                
-                <div class="stack-card">
-                    <div class="stack-header">
-                        <i class="fas fa-code stack-header-icon"></i> Stack Principal
-                    </div>
-                    <ul class="stack-list">
-                        <li>Java</li>
-                        <li>Java SE/EE</li>
-                        <li>Spring Boot</li>
-                        <li>Spring Framework</li>
-                        <li>Swing</li>
-                        <li>JavaFX</li>
-                        <li>Bases de Datos</li>
-                        <li>SQL</li>
-                    </ul>
+            <div class="card">
+                <a href="https://github.com/ecalar" target="_blank" class="card-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <i class="fas fa-hammer card-icon"></i>
+                <h3>Gestión Carpintería</h3>
+                <p>Control de materiales, elaboración de presupuestos y administración completa de clientes para el sector.</p>
+                <div class="tags">
+                    <span>Spring Boot</span>
+                    <span>Swing</span>
                 </div>
-
-                <div class="stack-card">
-                    <div class="stack-header">
-                        <i class="fas fa-terminal stack-header-icon"></i> Entorno & Herramientas
-                    </div>
-                    <ul class="stack-list">
-                        <li>Linux Mint</li>
-                        <li>OS Principal</li>
-                        <li>IntelliJ IDEA</li>
-                        <li>IDE Preferido</li>
-                        <li>Git</li>
-                        <li>Control de Versiones</li>
-                        <li>Hexagonal</li>
-                        <li>Arquitectura</li>
-                    </ul>
-                </div>
-
             </div>
-        </section>
 
+            <div class="card">
+                <a href="https://github.com/ecalar" target="_blank" class="card-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <i class="fas fa-users-viewfinder card-icon"></i>
+                <h3>Sistema HR</h3>
+                <p>Aplicación conectada a base de datos relacional para la gestión de recursos humanos y control de nóminas.</p>
+                <div class="tags">
+                    <span>JavaFX</span>
+                    <span>MySQL</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="https://github.com/ecalar" target="_blank" class="card-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <i class="fas fa-book-bookmark card-icon"></i>
+                <h3>Gestión Biblioteca</h3>
+                <p>Software para el control de préstamos y catálogo estructurado bajo patrones de arquitectura limpia.</p>
+                <div class="tags">
+                    <span>Java</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STACK TECNOLÓGICO -->
+        <h2 class="section-title">Ecosistema & Herramientas</h2>
+        <div class="stack-container">
+            <div class="stack-item"><i class="fab fa-java"></i> Java</div>
+            <div class="stack-item"><i class="fas fa-leaf"></i> Spring Boot</div>
+            <div class="stack-item"><i class="fas fa-window-maximize"></i> JavaFX & Swing</div>
+            <div class="stack-item"><i class="fab fa-linux"></i> Linux Mint</div>
+            <div class="stack-item"><i class="fas fa-code"></i> IntelliJ IDEA</div>
+            <div class="stack-item"><i class="fas fa-cubes"></i> Arq. Hexagonal</div>
+        </div>
+
+        <!-- FOOTER SOLO ICONOS -->
         <footer>
-            <div>© 2022 En: Enrique Cala</div>
-            <div class="footer-links">
-                <a href="mailto:enriquecalar@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://github.com/ecalar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/enrique-cala-rodr%C3%ADguez-21032491/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="social-icons">
+                <a href="mailto:enriquecalar@gmail.com" class="icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/ecalar" target="_blank" class="icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enrique-cala-rodr%C3%ADguez-21032491/" target="_blank" class="icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-text">
+                © 2026 Enrique Cala Rodríguez. Desarrollado con código limpio.
             </div>
         </footer>
     </div>
