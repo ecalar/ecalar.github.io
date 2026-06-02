@@ -3,236 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrique Cala | Desarrollador de Software</title>
-    <meta name="description" content="Estudiante de DAM buscando oportunidades de prácticas. Especializado en Java, Android y desarrollo backend.">
-    <link rel="stylesheet" href="assets/css/modern-normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Enrique Cala | Estudiante DAM</title>
+    <!-- Fuentes: Inter para lectura, JetBrains Mono para toques técnicos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="img" href="assets/img/favicon.png"/>
-    <script src="assets/js/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #f0f0f0;
+            --muted: #888888;
+            --border: #333333;
+            --accent: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        .status {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            max-width: 900px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* Secciones */
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Grid de Proyectos */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            color: var(--text);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--text);
+            align-self: flex-start;
+        }
+
+        .project-link:hover {
+            color: var(--muted);
+            border-color: var(--muted);
+        }
+
+        /* Stack & Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .info-block h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .contact-links a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 2rem;
+            text-transform: uppercase;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            header, footer {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .contact-links a {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="header">
+
     <div class="container">
-        <nav class="nav">
-            <a href="#" class="logo">EC</a>
-            <ul class="nav-list">
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-            <button class="mobile-nav-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+        <header>
+            <div class="logo">Enrique Cala</div>
+            <div class="status">● Disponible para 100% Remoto</div>
+        </header>
+
+        <section class="hero">
+            <h1>Desarrollador de Software.</h1>
+            <p>Estudiante del ciclo superior de Desarrollo de Aplicaciones Multiplataforma (DAM). Construyendo lógica de negocio robusta e interfaces de escritorio eficientes desde un entorno Linux.</p>
+        </section>
+
+        <section id="projects">
+            <div class="section-header">
+                <h2 class="section-title">Archivo de Proyectos</h2>
+            </div>
+            
+            <div class="project-grid">
+                <!-- MiStock Pro -->
+                <div class="project-card">
+                    <h3>MiStock Pro</h3>
+                    <p>Sistema de gestión de inventario personalizable desarrollado como proyecto de fin de grado. Interfaz gráfica abstracta, minimalista y centrada en la funcionalidad pura.</p>
+                    <div class="project-tech">
+                        <span>JAVA</span>
+                        <span>SWING</span>
+                    </div>
+                    <a href="https://github.com/ecalar" class="project-link">Ver Código →</a>
+                </div>
+
+                <!-- Carpintería -->
+                <div class="project-card">
+                    <h3>Gestión de Carpintería</h3>
+                    <p>Software de gestión integral para negocios del sector. Abarca control de materiales, elaboración de presupuestos y administración de clientes.</p>
+                    <div class="project-tech">
+                        <span>JAVA</span>
+                        <span>SPRING BOOT</span>
+                        <span>SWING</span>
+                    </div>
+                    <a href="https://github.com/ecalar" class="project-link">Ver Código →</a>
+                </div>
+
+                <!-- HR -->
+                <div class="project-card">
+                    <h3>Sistema HR</h3>
+                    <p>Aplicación de escritorio conectada a base de datos relacional para la administración de empleados, control de recursos humanos y nóminas.</p>
+                    <div class="project-tech">
+                        <span>JAVA</span>
+                        <span>JAVAFX</span>
+                    </div>
+                    <a href="https://github.com/ecalar" class="project-link">Ver Código →</a>
+                </div>
+
+                <!-- Biblioteca -->
+                <div class="project-card">
+                    <h3>Gestión de Biblioteca</h3>
+                    <p>Sistema de control de préstamos, catálogo de libros y gestión de usuarios. Diseño modular y arquitectura limpia.</p>
+                    <div class="project-tech">
+                        <span>JAVA</span>
+                        <span>SQL</span>
+                    </div>
+                    <a href="https://github.com/ecalar" class="project-link">Ver Código →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>Stack Principal</h3>
+                    <ul class="info-list">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>Swing & JavaFX</li>
+                        <li>Bases de Datos Relacionales</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>Entorno & Herramientas</h3>
+                    <ul class="info-list">
+                        <li>Linux Mint</li>
+                        <li>IntelliJ IDEA</li>
+                        <li>Git & GitHub</li>
+                        <li>Arquitectura Hexagonal</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div>© 2026 Enrique Cala Rodríguez</div>
+            <div class="contact-links">
+                <a href="mailto:enriquecalar@gmail.com">Email</a>
+                <a href="https://github.com/ecalar" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/enrique-cala-rodr%C3%ADguez-21032491/" target="_blank">LinkedIn</a>
+            </div>
+        </footer>
     </div>
-</header>
 
-<main>
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1><span class="text-gradient">Mi Portfolio</span></h1>
-                <p class="hero-description">
-                    Soy <strong>Enrique Cala</strong>, estudiante de Desarrollo de Aplicaciones Multiplataforma
-                    con pasión por crear soluciones innovadoras y funcionales. Busco oportunidades de
-                    <strong>prácticas FCT</strong> donde pueda aportar valor y seguir aprendiendo.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Ver mis proyectos</a>
-                    <a href="#contact" class="btn btn-secondary">Contactar</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="assets/img/avatar.jpg" alt="Enrique Cala" class="avatar">
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <!-- Proyecto 1 -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/img/projects/proyecto-1.jpg" alt="Sistema de Gestión HR">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sistema de Gestión HR</h3>
-                        <p>Aplicación desktop Java + JavaFX para gestión de empleados y nóminas con MySQL.</p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>JavaFX</span>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ecalar/app-recursos-humanos" class="project-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Proyecto 2 -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/img/projects/proyecto-2.jpg" alt="Sistema Bancario">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sistema Bancario</h3>
-                        <p>Sistema Java que simula operaciones bancarias con POO avanzada.</p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>POO</span>
-                            <span>Consola</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ecalar/SistemaCuentasBancarias" class="project-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Proyecto 3 -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/img/projects/proyecto-3.jpg" alt="Gestor de Contactos">
-                    </div>
-                    <div class="project-content">
-                        <h3>Gestor de Contactos</h3>
-                        <p>Aplicación Java para gestión de agenda con categorías y búsqueda.</p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>CRUD</span>
-                            <span>Consola</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ecalar/SistemaContactos" class="project-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">Sobre Mí</h2>
-                    <p>
-                        Soy un <strong>estudiante</strong> del ciclo superior de Desarrollo de
-                        Aplicaciones Multiplataforma en ILERNA. Mi curiosidad por la tecnología me lleva
-                        a aprender sobre nuevas tecnologías y metodologias de desarrollo.
-                    </p>
-                    <p>
-                        Me gusta investigar sobre nuevas tecnologías
-                        y desarrollar mis propios proyectos personales
-                        para seguir mejorando mis habilidades.
-                    </p>
-
-                    <h3>Tecnologías</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Lenguajes</h4>
-                            <div class="skills-list">
-                                <span>Java</span>
-                                <span>Python</span>
-                                <span>SQL</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Frameworks & Tools</h4>
-                            <div class="skills-list">
-                                <span>Spring Boot</span>
-                                <span>Android</span>
-                                <span>Git</span>
-                                <span>MySQL</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Frontend</h4>
-                            <div class="skills-list">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">¿Trabajamos Juntos?</h2>
-            <p class="contact-description">
-                Estoy buscando oportunidades de <strong>prácticas FCT</strong> donde pueda aportar valor
-                y continuar aprendiendo. Si mi perfil encaja con tu empresa, ¡hablemos!
-            </p>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Contacto</h3>
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
-                        </svg>
-                        <span>enriquecalar@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm6-14h-12v-2h12v2zm0 4h-12v-2h12v2zm0 4h-12v-2h12v2z"/>
-                        </svg>
-                        <span>Disponible para prácticas</span>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <h3>Sígueme</h3>
-                    <div class="social-grid">
-                        <a href="https://www.linkedin.com/in/enrique-cala-rodr%C3%ADguez-21032491/" class="social-link linkedin">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/ecalar" class="social-link github">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2025 Enrique Cala Rodríguez.</p>
-    </div>
-</footer>
 </body>
 </html>
