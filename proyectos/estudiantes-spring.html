@@ -2,36 +2,71 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema Estudiantes Spring | CRUD profesional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Estudiantes Spring | Enrique Cala</title>
+    <meta name="description" content="CRUD completo con Spring Boot, validaciones y arquitectura en capas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
+    </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
     <div class="container">
         <nav>
             <a href="../index.html" class="logo">E<span>C.</span></a>
-            <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+            </div>
         </nav>
-        <main>
-            <h1>Sistema de Estudiantes con Spring Boot</h1>
-            <p class="project-subtitle">CRUD completo con arquitectura en capas</p>
+        <main class="project-detail">
+            <h1>Sistema Estudiantes Spring <span class="status-tag">Completado</span></h1>
+            <p class="project-subtitle">CRUD completo con Spring Boot, validaciones y arquitectura en capas</p>
+
             <section class="glass-card">
-                <h2>Problema</h2>
-                <p>Necesitaba una aplicación web sencilla pero profesional para demostrar el uso de Spring Boot con JPA y validaciones.</p>
-                <h2>Solución</h2>
-                <p>Desarrollé un gestor de estudiantes con operaciones CRUD, paginación, validación de formularios y diseño responsive con Bootstrap.</p>
+                <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
+                <p>Necesitaba un proyecto sólido que demostrara el dominio de Spring Boot en un entorno profesional, más allá de los típicos tutoriales.</p>
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
+                <p>Construí un gestor completo de estudiantes con operaciones CRUD, paginación, validación de formularios con anotaciones de Jakarta, y una interfaz responsive con Thymeleaf y Bootstrap. Todo estructurado en capas (Controller, Service, Repository).</p>
             </section>
+
             <section class="glass-card">
                 <h2>Tecnologías</h2>
-                <span class="tech-tag">Spring Boot</span><span class="tech-tag">Thymeleaf</span><span class="tech-tag">JPA/Hibernate</span><span class="tech-tag">MySQL</span>
+                <div style="margin-top:1rem;">
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Thymeleaf</span>
+                    <span class="tech-tag">JPA/Hibernate</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Bootstrap</span>
+                </div>
             </section>
+
             <section class="glass-card">
                 <h2>Capturas</h2>
-                <div class="gallery"><a href="../assets/img/estudiantes1.jpg"><img src="../assets/img/estudiantes1.jpg"></a></div>
+                <div class="gallery">
+                    <a href="../assets/img/estudiantes1.jpg" target="_blank"><img src="../assets/img/estudiantes1.jpg" alt="Listado de estudiantes"></a>
+                    <a href="../assets/img/estudiantes2.jpg" target="_blank"><img src="../assets/img/estudiantes2.jpg" alt="Formulario de edición"></a>
+                </div>
             </section>
-            <div style="margin-top:2rem;">
-                <a href="https://github.com/ecalar/SistemaEstudiantesSpring" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Repositorio público</a>
-                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Inicio</a>
+
+            <section class="glass-card">
+                <h2>Arquitectura y decisiones</h2>
+                <p>Utilicé Spring Data JPA para abstraer la capa de persistencia y Thymeleaf como motor de plantillas. Implementé validaciones del lado del servidor y un sistema de mensajes flash para feedback al usuario.</p>
+            </section>
+
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://github.com/ecalar/SistemaEstudiantesSpring" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver repositorio</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
             </div>
         </main>
     </div>
