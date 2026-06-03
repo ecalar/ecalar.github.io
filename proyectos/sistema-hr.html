@@ -3,49 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiStock | Gestión de inventario · TFG DAM</title>
+    <title>App Recursos Humanos | Enrique Cala</title>
+    <meta name="description" content="Gestión de empleados, nóminas y perfiles con JavaFX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <style>
-        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
-        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; }
-        .gallery img { width: 100%; transition: transform 0.3s; }
-        .gallery a:hover img { transform: scale(1.05); }
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
     </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
     <div class="container">
         <nav>
             <a href="../index.html" class="logo">E<span>C.</span></a>
-            <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+            </div>
         </nav>
         <main class="project-detail">
-            <h1>MiStock <span class="status-tag">Completado · Nota 8.3</span></h1>
-            <p class="project-subtitle">Sistema de gestión de inventario · TFG DAM</p>
+            <h1>App Recursos Humanos <span class="status-tag">Completado</span></h1>
+            <p class="project-subtitle">Gestión de empleados, nóminas y perfiles con JavaFX</p>
+
             <section class="glass-card">
-                <h2>Problema</h2>
-                <p>Pequeños negocios necesitan controlar su inventario sin depender de hojas de cálculo desordenadas ni software genérico difícil de adaptar.</p>
-                <h2>Solución</h2>
-                <p>Desarrollé un software de escritorio con Java Swing, altamente personalizable, que permite gestionar productos, categorías, alertas de stock bajo y generación de reportes. La interfaz sigue un diseño minimalista y moderno.</p>
+                <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
+                <p>Muchas pymes aún gestionan sus empleados con hojas de cálculo, lo que dificulta la consulta rápida de nóminas, historial y datos personales.</p>
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
+                <p>Una aplicación de escritorio moderna con JavaFX que centraliza altas, bajas, modificaciones y consultas de empleados. Interfaz intuitiva con pestañas, tablas dinámicas y conexión a base de datos MySQL.</p>
             </section>
+
             <section class="glass-card">
                 <h2>Tecnologías</h2>
-                <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span><span class="tech-tag">MVC</span><span class="tech-tag">DAO</span>
+                <div style="margin-top:1rem;">
+                    <span class="tech-tag">JavaFX</span>
+                    <span class="tech-tag">MVC</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">JDBC</span>
+                </div>
             </section>
+
             <section class="glass-card">
                 <h2>Capturas</h2>
                 <div class="gallery">
-                    <a href="../assets/img/mistock1.jpg" target="_blank"><img src="../assets/img/mistock1.jpg" alt="Pantalla principal"></a>
-                    <a href="../assets/img/mistock2.jpg" target="_blank"><img src="../assets/img/mistock2.jpg" alt="Gestión de productos"></a>
+                    <a href="../assets/img/rrhh1.jpg" target="_blank"><img src="../assets/img/rrhh1.jpg" alt="Lista de empleados"></a>
+                    <a href="../assets/img/rrhh2.jpg" target="_blank"><img src="../assets/img/rrhh2.jpg" alt="Formulario de alta"></a>
                 </div>
             </section>
+
             <section class="glass-card">
                 <h2>Arquitectura y decisiones</h2>
-                <p>Usé el patrón MVC con una capa de persistencia DAO. La base de datos se diseñó con MySQL Workbench aplicando normalización 3FN. Implementé validaciones en tiempo real y un sistema de búsqueda con filtros dinámicos.</p>
+                <p>Implementé el patrón MVC separando la lógica de negocio de la interfaz. Las operaciones CRUD se realizan mediante JDBC con PreparedStatements para evitar inyección SQL.</p>
             </section>
-            <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-                <a href="https://github.com/ecalar/MiStock" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Repositorio público</a>
-                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Inicio</a>
+
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://github.com/ecalar/app-recursos-humanos" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver repositorio</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
             </div>
         </main>
     </div>
