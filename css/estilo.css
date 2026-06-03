@@ -430,6 +430,13 @@ footer {
     color: var(--text-muted);
 }
 
+
+
+.nav-links a.active {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .hero { flex-direction: column-reverse; text-align: center; }
     .hero-cta { justify-content: center; }
