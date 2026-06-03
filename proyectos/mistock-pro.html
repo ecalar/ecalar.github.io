@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiStock Pro | Proyecto DAM</title>
+    <meta name="description" content="Sistema de gestión de inventario personalizable. TFG DAM con Java y Swing.">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <!-- Lightbox CSS simple -->
+    <style>
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; }
+        .gallery img { width: 100%; transition: transform 0.3s; }
+        .gallery a:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="container">
+        <nav>
+            <a href="../index.html" class="logo">E<span>C.</span></a>
+            <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+        </nav>
+
+        <main class="project-detail">
+            <h1>MiStock Pro <span class="status-tag">Completado</span></h1>
+            <p class="project-subtitle">Proyecto final de grado · TFG DAM</p>
+
+            <section class="project-description glass-card">
+                <h2>El problema</h2>
+                <p>Pequeños negocios necesitan una herramienta de inventario sin complicaciones, pero las soluciones actuales son demasiado genéricas o requieren formación.</p>
+                <h2>La solución</h2>
+                <p>Diseñé un software de escritorio con Java Swing, altamente personalizable, con una interfaz minimalista y abstracta. Permite gestión de productos, alertas de stock bajo y reportes básicos.</p>
+            </section>
+
+            <section class="project-tech glass-card">
+                <h2>Tecnologías utilizadas</h2>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Swing</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">MVC</span>
+            </section>
+
+            <section class="project-gallery glass-card">
+                <h2>Capturas</h2>
+                <div class="gallery">
+                    <a href="../assets/img/mistock1.jpg" target="_blank"><img src="../assets/img/mistock1.jpg" alt="Pantalla principal"></a>
+                    <a href="../assets/img/mistock2.jpg" target="_blank"><img src="../assets/img/mistock2.jpg" alt="Gestión de productos"></a>
+                    <!-- Añade más imágenes -->
+                </div>
+            </section>
+
+            <section class="project-architecture glass-card">
+                <h2>Arquitectura</h2>
+                <p>Utilicé el patrón MVC con una capa de persistencia DAO. La base de datos se diseñó con MySQL Workbench, creando un esquema normalizado hasta 3FN.</p>
+                <img src="../assets/img/mistock-diagrama.png" alt="Diagrama de clases" style="max-width:100%; margin-top:1rem;">
+            </section>
+
+            <div class="project-links-footer">
+                <a href="#" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> Repositorio (próximamente público)</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
