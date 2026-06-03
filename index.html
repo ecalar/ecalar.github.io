@@ -5,33 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrique Cala | Desarrollador DAM · Portfolio 2026</title>
     <meta name="description" content="Portfolio de Enrique Cala, desarrollador de aplicaciones multiplataforma. Busco prácticas FCT en remoto (385h). Especializado en Java, Spring Boot y diseño de interfaces.">
-    <!-- Open Graph -->
     <meta property="og:title" content="Enrique Cala · Desarrollador DAM">
     <meta property="og:description" content="Busco prácticas FCT en remoto. Proyectos sólidos, planificación y código limpio.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ecalar.github.io">
-    <!-- Fuentes e iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        :root {
+            --bg-base: #050505;
+            --text-main: #f8f9fa;
+            --text-muted: #adb5bd;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--bg-base); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+        .bg-glow {
+            position: fixed; border-radius: 50%; filter: blur(140px); z-index: -1; opacity: 0.35;
+            animation: float 12s infinite alternate ease-in-out;
+        }
+        .glow-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, var(--accent-blue), transparent 70%); }
+        .glow-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, var(--accent-purple), transparent 70%); animation-delay: -5s; }
+        .glow-3 { top: 40%; left: 40%; width: 40vw; height: 40vw; background: radial-gradient(circle, var(--accent-cyan), transparent 70%); animation-duration: 15s; opacity: 0.2; }
+        @keyframes float { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(5%,8%) scale(1.1); } }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .availability-bar {
+            background: rgba(5,5,5,0.85); backdrop-filter: blur(10px); text-align: center;
+            padding: 0.5rem; font-size: 0.9rem; color: #10b981; border-bottom: 1px solid var(--glass-border);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .status-dot { display: inline-block; width: 8px; height: 8px; background: #10b981; border-radius: 50%; margin-right: 0.5rem; box-shadow: 0 0 10px #10b981; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; }
+        .logo { font-size: 1.8rem; font-weight: 800; text-decoration: none; color: #fff; }
+        .logo span { color: var(--accent-blue); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: var(--transition); }
+        .nav-links a:hover { color: #fff; }
+        .social-icons { display: flex; gap: 1rem; }
+        .icon-btn {
+            display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px;
+            background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main);
+            font-size: 1.1rem; transition: var(--transition); text-decoration: none;
+        }
+        .icon-btn:hover { background: rgba(255,255,255,0.1); border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-3px); }
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 4rem; padding: 5rem 0; }
+        .hero-text { flex: 1.2; }
+        .badge {
+            display: inline-block; padding: 0.5rem 1.2rem; background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.3); border-radius: 50px; color: var(--accent-blue);
+            font-weight: 600; font-size: 0.9rem; margin-bottom: 1.5rem; animation: pulse-border 2s infinite;
+        }
+        @keyframes pulse-border { 0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); } 70% { box-shadow: 0 0 0 10px rgba(59,130,246,0); } 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); } }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .gradient-text { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 550px; margin-bottom: 2rem; }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition);
+        }
+        .btn-primary { background: var(--accent-blue); color: #fff; border: none; }
+        .btn-primary:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(59,130,246,0.4); }
+        .btn-outline { border: 2px solid var(--glass-border); color: #fff; background: transparent; }
+        .btn-outline:hover { border-color: var(--accent-blue); background: rgba(59,130,246,0.1); }
+        .hero-img-wrapper { flex: 0.8; position: relative; display: flex; justify-content: center; }
+        .hero-img { max-width: 350px; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 30px; border: 2px solid rgba(255,255,255,0.2); position: relative; z-index: 2; }
+        .hero-img-bg { position: absolute; width: 110%; height: 110%; background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple)); border-radius: 40px; filter: blur(30px); opacity: 0.5; z-index: 1; }
+        section { padding: 5rem 0; }
+        .section-title { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 1rem; background: linear-gradient(135deg, #fff, var(--text-muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-subtitle { text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 4rem; }
+        .glass-card {
+            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 24px;
+            backdrop-filter: blur(12px); padding: 2.5rem; transition: var(--transition);
+        }
+        .glass-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); transform: translateY(-5px); }
+        .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .timeline { max-width: 800px; margin: 0 auto; }
+        .timeline-header { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; }
+        .timeline-item { padding-left: 2rem; border-left: 2px solid var(--glass-border); margin-bottom: 2rem; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -8px; top: 5px; width: 14px; height: 14px; background: var(--accent-blue); border-radius: 50%; box-shadow: 0 0 15px var(--accent-blue); }
+        .timeline-date { font-size: 0.8rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+
+        /* NUEVA SECCIÓN SKILLS VISUALES */
+        .skills-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .skill-area {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+        }
+        .skill-area h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+        .skill-area h3 i {
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .skill-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .skill-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .skill-name {
+            width: 140px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+        .bar-bg {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            width: 0%;
+            animation: fillBar 1.5s ease forwards;
+        }
+        @keyframes fillBar { to { width: var(--w); } }
+        .skill-level {
+            width: 50px;
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        /* Proceso de trabajo */
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .step { text-align: center; padding: 2rem; border: 1px solid var(--glass-border); border-radius: 24px; background: rgba(255,255,255,0.02); }
+        .step-number { font-size: 3rem; font-weight: 800; color: var(--accent-blue); opacity: 0.7; }
+
+        /* Proyectos */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { display: flex; flex-direction: column; }
+        .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .folder-icon { font-size: 2.5rem; color: var(--accent-blue); }
+        .status-tag { background: rgba(245,158,11,0.1); color: #f59e0b; padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+        .project-link { color: var(--accent-cyan); font-weight: 500; text-decoration: none; margin-top: auto; }
+        .project-link:hover { text-decoration: underline; }
+        .tech-tag { display: inline-block; background: rgba(139,92,246,0.15); color: var(--accent-purple); padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.8rem; margin-right: 0.5rem; margin-top: 0.5rem; }
+
+        /* Otros proyectos */
+        .other-projects-list { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 3rem; }
+        .other-projects-list a { color: var(--text-muted); text-decoration: none; border: 1px solid var(--glass-border); border-radius: 50px; padding: 0.4rem 1.2rem; font-size: 0.9rem; transition: var(--transition); }
+        .other-projects-list a:hover { border-color: var(--accent-blue); color: #fff; background: rgba(59,130,246,0.1); }
+
+        /* Contacto */
+        .contact-container { max-width: 600px; margin: 0 auto; text-align: center; }
+        .contact-container form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+        .contact-container input, .contact-container textarea {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            border-radius: 12px; padding: 0.75rem 1rem; color: #fff; font-family: inherit;
+        }
+        .direct-contact { margin-top: 2rem; display: flex; gap: 2rem; justify-content: center; }
+        .direct-contact a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+        .direct-contact a:hover { color: #fff; }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--glass-border); margin-top: 4rem; color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-cta { justify-content: center; }
+            .nav-links { display: none; }
+            .skill-name { width: 100%; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Fondo animado -->
     <div class="bg-glow glow-1"></div>
     <div class="bg-glow glow-2"></div>
     <div class="bg-glow glow-3"></div>
 
-    <!-- Barra de disponibilidad fija -->
     <div class="availability-bar">
         <span class="status-dot"></span> Disponible para FCT remoto · 385h · Morón de la Frontera (Sevilla)
     </div>
 
     <div class="container">
-        <!-- Navegación principal -->
         <nav>
-            <a href="index.html" class="logo">E<span>C.</span></a>
+            <a href="#" class="logo">E<span>C.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">Sobre mí</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -45,7 +226,6 @@
             </div>
         </nav>
 
-        <!-- Hero -->
         <header class="hero">
             <div class="hero-text">
                 <span class="badge">🎯 Prácticas FCT · 385 horas · Remoto</span>
@@ -62,7 +242,6 @@
             </div>
         </header>
 
-        <!-- Sobre mí -->
         <section id="about">
             <h2 class="section-title">El perfil completo</h2>
             <p class="section-subtitle">Tres pilares formativos que me permiten entender el software desde el hardware hasta la experiencia de usuario.</p>
@@ -83,7 +262,6 @@
                     <p>Disfruto creando interfaces limpias y funcionales. Mi formación en animación 3D me da un extra en diseño visual y UX.</p>
                 </div>
             </div>
-            <!-- Timeline académica -->
             <div class="glass-card timeline">
                 <h3 class="timeline-header">Evolución formativa</h3>
                 <div class="timeline-item">
@@ -104,120 +282,115 @@
             </div>
         </section>
 
-        <!-- Proceso de trabajo (nueva sección diferenciadora) -->
+        <section id="skills">
+            <h2 class="section-title">Especialización técnica</h2>
+            <div class="skills-visual">
+                <div class="skill-area">
+                    <h3><i class="fas fa-server"></i> Backend & Core</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item"><span class="skill-name">Java SE / EE</span><div class="bar-bg"><div class="bar-fill" style="--w:90%"></div></div><span class="skill-level">90%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">Spring Boot</span><div class="bar-bg"><div class="bar-fill" style="--w:75%"></div></div><span class="skill-level">75%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">SQL / MySQL</span><div class="bar-bg"><div class="bar-fill" style="--w:85%"></div></div><span class="skill-level">85%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">Arquitectura Hexagonal</span><div class="bar-bg"><div class="bar-fill" style="--w:60%"></div></div><span class="skill-level">60%</span></div>
+                    </div>
+                </div>
+                <div class="skill-area">
+                    <h3><i class="fas fa-desktop"></i> Frontend Desktop</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item"><span class="skill-name">JavaFX</span><div class="bar-bg"><div class="bar-fill" style="--w:80%"></div></div><span class="skill-level">80%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">Swing</span><div class="bar-bg"><div class="bar-fill" style="--w:90%"></div></div><span class="skill-level">90%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">UI/UX Design</span><div class="bar-bg"><div class="bar-fill" style="--w:70%"></div></div><span class="skill-level">70%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">MVC / Patrones</span><div class="bar-bg"><div class="bar-fill" style="--w:85%"></div></div><span class="skill-level">85%</span></div>
+                    </div>
+                </div>
+                <div class="skill-area">
+                    <h3><i class="fas fa-tools"></i> Entorno & Herramientas</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item"><span class="skill-name">Linux Mint</span><div class="bar-bg"><div class="bar-fill" style="--w:90%"></div></div><span class="skill-level">90%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">IntelliJ IDEA</span><div class="bar-bg"><div class="bar-fill" style="--w:95%"></div></div><span class="skill-level">95%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">Git / GitHub</span><div class="bar-bg"><div class="bar-fill" style="--w:85%"></div></div><span class="skill-level">85%</span></div>
+                        <div class="skill-bar-item"><span class="skill-name">Planificación</span><div class="bar-bg"><div class="bar-fill" style="--w:80%"></div></div><span class="skill-level">80%</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="proceso">
             <h2 class="section-title">Cómo trabajo</h2>
             <div class="process-steps">
-                <div class="step">
-                    <span class="step-number">01</span>
-                    <h3>Análisis y estructura</h3>
-                    <p>Entiendo el problema, defino requisitos y dibujo el flujo de la aplicación.</p>
-                </div>
-                <div class="step">
-                    <span class="step-number">02</span>
-                    <h3>Arquitectura y base de datos</h3>
-                    <p>Diagrama de clases, modelo relacional, elección de patrones (MVC, hexagonal...).</p>
-                </div>
-                <div class="step">
-                    <span class="step-number">03</span>
-                    <h3>Desarrollo progresivo</h3>
-                    <p>Primero el núcleo, luego funcionalidades. Commits pequeños y código limpio.</p>
-                </div>
-                <div class="step">
-                    <span class="step-number">04</span>
-                    <h3>Pruebas y pulido</h3>
-                    <p>Revisión de errores, testeo manual y mejoras de interfaz.</p>
-                </div>
+                <div class="step"><span class="step-number">01</span><h3>Análisis y estructura</h3><p>Entiendo el problema, defino requisitos y dibujo el flujo de la aplicación.</p></div>
+                <div class="step"><span class="step-number">02</span><h3>Arquitectura y BD</h3><p>Diagrama de clases, modelo relacional, elección de patrones.</p></div>
+                <div class="step"><span class="step-number">03</span><h3>Desarrollo progresivo</h3><p>Primero el núcleo, luego funcionalidades. Commits pequeños.</p></div>
+                <div class="step"><span class="step-number">04</span><h3>Pruebas y pulido</h3><p>Revisión de errores, testeo manual y mejoras de interfaz.</p></div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section id="skills">
-            <h2 class="section-title">Especialización técnica</h2>
-            <div class="skills-grid">
-                <div class="glass-card skill-card">
-                    <i class="fas fa-server skill-icon"></i>
-                    <h4>Backend & Core</h4>
-                    <ul>
-                        <li>Java SE / EE</li>
-                        <li>Spring Boot</li>
-                        <li>Arquitectura Hexagonal</li>
-                        <li>Bases de Datos Relacionales</li>
-                    </ul>
-                </div>
-                <div class="glass-card skill-card">
-                    <i class="fas fa-desktop skill-icon"></i>
-                    <h4>Frontend Desktop</h4>
-                    <ul>
-                        <li>JavaFX</li>
-                        <li>Java Swing</li>
-                        <li>Diseño UI/UX</li>
-                        <li>MVC</li>
-                    </ul>
-                </div>
-                <div class="glass-card skill-card">
-                    <i class="fas fa-terminal skill-icon"></i>
-                    <h4>Entorno & DevOps</h4>
-                    <ul>
-                        <li>Linux Mint</li>
-                        <li>IntelliJ IDEA</li>
-                        <li>Git / GitHub</li>
-                        <li>Planificación</li>
-                    </ul>
-                </div>
-                <div class="glass-card skill-card">
-                    <i class="fas fa-paint-brush skill-icon"></i>
-                    <h4>Diseño visual</h4>
-                    <ul>
-                        <li>Vectores 2D planos</li>
-                        <li>Assets para móviles</li>
-                        <li>Identidad visual</li>
-                        <li>Prototipado</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Proyectos -->
         <section id="projects">
             <h2 class="section-title">Proyectos destacados</h2>
             <p class="section-subtitle">Cada proyecto tiene su propia página con detalles, capturas y decisiones técnicas.</p>
             <div class="projects-grid">
-                <!-- Tarjeta MiStock Pro -->
-                <article class="project-card glass-card">
-                    <div class="project-header">
-                        <i class="far fa-folder-open folder-icon"></i>
-                        <div class="project-links">
-                            <a href="proyectos/mistock-pro.html" class="project-link">Ver proyecto</a>
-                        </div>
-                    </div>
-                    <h3>MiStock Pro</h3>
-                    <p>Gestión de inventario personalizable con identidad visual abstracta. Proyecto final de grado (TFG).</p>
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Swing</span>
-                    <span class="tech-tag">MySQL</span>
+                <article class="glass-card project-card">
+                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i></div>
+                    <h3>MiStock</h3>
+                    <p>Gestión de inventario personalizable. Proyecto final de grado (nota 8.3).</p>
+                    <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span>
+                    <a href="proyectos/mistock.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
                 </article>
-
-                <!-- Tarjeta CanaryPro -->
-                <article class="project-card glass-card">
-                    <div class="project-header">
-                        <i class="far fa-folder-open folder-icon"></i>
-                        <span class="status-tag">En desarrollo</span>
-                    </div>
+                <article class="glass-card project-card">
+                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">En desarrollo</span></div>
                     <h3>CanaryPro</h3>
-                    <p>Software para gestión de aviarios y cría de canarios. Genealogía, alimentación y clínica.</p>
-                    <a href="proyectos/canarypro.html" class="project-link">Ver proyecto</a>
+                    <p>Software para gestión de aviarios y cría de canarios. Genealogía y clínica.</p>
+                    <span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">PostgreSQL</span>
+                    <a href="proyectos/canarypro.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
                 </article>
-
-                <!-- Resto de tarjetas igual... (por brevedad incluyo solo las 2 primeras, el patrón se repite) -->
-                <!-- Añade las demás con la misma estructura -->
+                <article class="glass-card project-card">
+                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">En desarrollo</span></div>
+                    <h3>miHermandad</h3>
+                    <p>Plataforma de gestión integral para hermandades religiosas. Módulos de hermanos, cultos e inventario.</p>
+                    <span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Thymeleaf</span>
+                    <a href="proyectos/mihermandad.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="glass-card project-card">
+                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i></div>
+                    <h3>App Recursos Humanos</h3>
+                    <p>Gestión de empleados, nóminas y perfiles con JavaFX y base de datos relacional.</p>
+                    <span class="tech-tag">JavaFX</span><span class="tech-tag">MVC</span><span class="tech-tag">MySQL</span>
+                    <a href="proyectos/rrhh.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="glass-card project-card">
+                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i></div>
+                    <h3>Gestión Carpintería</h3>
+                    <p>Digitalización de talleres: control de stock, presupuestos y clientes.</p>
+                    <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span>
+                    <a href="proyectos/carpinteria.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="glass-card project-card">
+                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i></div>
+                    <h3>Sistema Estudiantes Spring</h3>
+                    <p>CRUD completo con Spring Boot, validaciones y arquitectura en capas.</p>
+                    <span class="tech-tag">Spring Boot</span><span class="tech-tag">Thymeleaf</span><span class="tech-tag">JPA</span>
+                    <a href="proyectos/estudiantes-spring.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </article>
             </div>
+            <h3 style="text-align:center; margin-top:4rem;">Otros proyectos</h3>
+            <ul class="other-projects-list">
+                <li><a href="https://github.com/ecalar/SistemaContactos" target="_blank">Sistema Contactos</a></li>
+                <li><a href="https://github.com/ecalar/SistemaCuentasBancarias" target="_blank">Cuentas Bancarias</a></li>
+                <li><a href="https://github.com/ecalar/ArchivadorDigital" target="_blank">Archivador Digital</a></li>
+                <li><a href="https://github.com/ecalar/GestionEmpleados" target="_blank">Gestión Empleados</a></li>
+                <li><a href="https://github.com/ecalar/SistemasEstudiantesApp" target="_blank">Estudiantes App</a></li>
+                <li><a href="https://github.com/ecalar/TiendaLibros" target="_blank">Tienda Libros</a></li>
+                <li><a href="https://github.com/ecalar/AppCalculadora" target="_blank">Calculadora</a></li>
+                <li><a href="https://github.com/ecalar/CatalogoPeliculasApp" target="_blank">Catálogo Películas</a></li>
+                <li><a href="https://github.com/ecalar/VentaOrdenadoresApp" target="_blank">Venta Ordenadores</a></li>
+                <li><a href="https://github.com/ecalar/ListadoPersonasApp" target="_blank">Listado Personas</a></li>
+                <li><a href="https://github.com/ecalar/Sistema-de-Tareas" target="_blank">Sistema de Tareas</a></li>
+            </ul>
         </section>
 
-        <!-- Contacto -->
         <section id="contact">
             <h2 class="section-title">Contacto directo</h2>
-            <div class="contact-container glass-card">
+            <div class="glass-card contact-container">
                 <p>¿Interesado en mi perfil para prácticas FCT o colaboración? Escríbeme.</p>
                 <form action="https://formspree.io/f/tu-id" method="POST">
                     <input type="text" name="nombre" placeholder="Tu nombre" required>
@@ -236,7 +409,5 @@
             <p>© 2026 Enrique Cala Rodríguez · Construido con lógica y diseño.</p>
         </footer>
     </div>
-
-    <script src="js/main.js"></script>
 </body>
 </html>
