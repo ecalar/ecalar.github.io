@@ -3,124 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombre del Proyecto | Enrique Cala</title>
-    <meta name="description" content="Descripción breve del proyecto.">
+    <title>CanaryPro | Enrique Cala</title>
+    <meta name="description" content="App comunidad para criadores de canarios federados.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <style>
-        .project-detail h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 0.25rem;
-        }
-        .project-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-        }
-        .project-detail section {
-            margin-bottom: 2rem;
-        }
-        .gallery {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-        .gallery a {
-            flex: 1 1 250px;
-            overflow: hidden;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            transition: var(--transition);
-        }
-        .gallery a:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-3px);
-        }
-        .gallery img {
-            width: 100%;
-            display: block;
-        }
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
     </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-    <div class="bg-glow glow-3"></div>
-
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
     <div class="container">
-        <!-- Navegación -->
         <nav>
             <a href="../index.html" class="logo">E<span>C.</span></a>
             <div class="nav-actions">
                 <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
             </div>
         </nav>
-
         <main class="project-detail">
-            <!-- Título y estado -->
-            <h1>Nombre del Proyecto <span class="status-tag">Completado</span></h1>
-            <p class="project-subtitle">Subtítulo o breve descripción (ej. "Aplicación de escritorio para gestión de inventario")</p>
+            <h1>CanaryPro <span class="status-tag">En desarrollo</span></h1>
+            <p class="project-subtitle">Plataforma comunidad para criadores de canarios federados</p>
 
-            <!-- Sección: Problema y solución -->
             <section class="glass-card">
                 <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
-                <p>Describe aquí el problema que resuelve tu proyecto. ¿Qué necesidad tiene el usuario? ¿Qué limitaciones encuentras en las soluciones actuales?</p>
+                <p>Los criadores de canarios federados no disponen de una herramienta digital que centralice la gestión de sus aviarios y, al mismo tiempo, les conecte con otros criadores y clubes. La mayoría utiliza métodos dispersos (WhatsApp, Excel, foros genéricos) que no están adaptados a su flujo de trabajo real.</p>
                 <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
-                <p>Explica cómo tu aplicación aborda ese problema. Resalta las funcionalidades principales y qué la hace diferente.</p>
+                <p>CanaryPro nace como una app móvil (Kotlin + Firebase) que integra gestor de aviario (pájaros, parejas, crías, calendario), concursos, chat de clubes tipo WhatsApp, foro y mercado. Una comunidad completa pensada por y para criadores federados.</p>
             </section>
 
-            <!-- Sección: Tecnologías -->
             <section class="glass-card">
-                <h2>Tecnologías utilizadas</h2>
+                <h2>Tecnologías</h2>
                 <div style="margin-top:1rem;">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Swing</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">MVC</span>
-                    <!-- Añade o quita etiquetas según tu stack real -->
+                    <span class="tech-tag">Kotlin</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Android</span>
+                    <span class="tech-tag">UI/UX</span>
                 </div>
             </section>
 
-            <!-- Sección: Capturas de pantalla -->
             <section class="glass-card">
-                <h2>Capturas</h2>
-                <div class="gallery">
-                    <a href="../assets/img/proyecto1.jpg" target="_blank">
-                        <img src="../assets/img/proyecto1.jpg" alt="Pantalla principal">
-                    </a>
-                    <a href="../assets/img/proyecto2.jpg" target="_blank">
-                        <img src="../assets/img/proyecto2.jpg" alt="Funcionalidad destacada">
-                    </a>
-                    <!-- Copia y pega más enlaces según necesites -->
-                </div>
-                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imágenes para verlas en grande.</p>
+                <h2>Estado actual</h2>
+                <p>Fase de diseño y prototipado. He definido las funcionalidades principales y la arquitectura inicial en Firebase. El repositorio se mantiene privado durante el desarrollo inicial.</p>
             </section>
 
-            <!-- Sección: Arquitectura y decisiones técnicas -->
-            <section class="glass-card">
-                <h2>Arquitectura y decisiones técnicas</h2>
-                <p>Comenta aquí el patrón de diseño que usaste (MVC, DAO...), cómo está estructurada la base de datos, o cualquier otra decisión importante que hayas tomado. Si tienes un diagrama, puedes insertarlo:</p>
-                <!-- <img src="../assets/img/proyecto-diagrama.png" alt="Diagrama de clases" style="max-width:100%; margin-top:1rem; border-radius:12px;"> -->
-            </section>
-
-            <!-- Sección: Enlaces y acciones -->
             <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
-                <a href="https://github.com/ecalar/NombreRepo" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-github"></i> Ver repositorio
-                </a>
-                <a href="../index.html" class="btn btn-primary">
-                    <i class="fas fa-home"></i> Volver al inicio
-                </a>
+                <span class="btn btn-outline" style="opacity:0.6;"><i class="fab fa-github"></i> Repositorio privado</span>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
             </div>
         </main>
     </div>
-
-    <!-- Script para el menú hamburguesa (si decides incluirlo también en las páginas de proyecto) -->
-    <!-- <script src="../js/main.js"></script> -->
 </body>
 </html>
