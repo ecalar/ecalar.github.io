@@ -235,8 +235,9 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--glass-bo
 }
 
 /* Foto más pequeña en móvil */
-.hero-img {
-    max-width: 200px;  /* antes 350px */
+.hero .hero-img {
+    max-width: 200px;
+    width: 70%;
     margin: 0 auto;
 }
 
