@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImg = document.getElementById('modal-img');
     const modalCaption = document.getElementById('modal-caption');
     const closeModal = document.querySelector('.modal-close');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-links');
 
-    // Scroll spy
+    // Scroll spy y botón back-to-top
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal para diplomas
+    // Modal diplomas
     const diplomaButtons = document.querySelectorAll('.diploma-btn');
     diplomaButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -53,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cerrar modal
     if (closeModal) {
         closeModal.addEventListener('click', () => {
             modal.classList.remove('show');
@@ -64,4 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('show');
         }
     });
+
+    // Menú hamburguesa
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show');
+        });
+
+        // Cierra el menú al hacer clic en un enlace (comportamiento SPA suave)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('show');
+            });
+        });
+    }
 });
