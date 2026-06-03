@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('show');
         });
 
-        // Cierra el menú al hacer clic en un enlace (comportamiento SPA suave)
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
