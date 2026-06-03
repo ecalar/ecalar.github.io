@@ -559,3 +559,33 @@ footer {
     .nav-links { display: none; }
     .skill-name { width: 100%; }
 }
+
+/* Botón volver arriba */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    box-shadow: 0 10px 25px rgba(59,130,246,0.4);
+    display: grid;
+    place-items: center;
+}
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+#back-to-top:hover {
+    transform: translateY(-3px);
+    background: #2563eb;
+}
