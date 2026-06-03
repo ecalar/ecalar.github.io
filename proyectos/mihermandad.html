@@ -2,36 +2,62 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>miHermandad | Gestión cofrade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miHermandad | Enrique Cala</title>
+    <meta name="description" content="Juego de simulación de gestión de hermandad religiosa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
+    </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
     <div class="container">
         <nav>
             <a href="../index.html" class="logo">E<span>C.</span></a>
-            <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+            </div>
         </nav>
-        <main>
+        <main class="project-detail">
             <h1>miHermandad <span class="status-tag">En desarrollo</span></h1>
-            <p class="project-subtitle">Plataforma integral de gestión para hermandades religiosas</p>
+            <p class="project-subtitle">Juego de simulación de gestión de hermandad religiosa</p>
+
             <section class="glass-card">
-                <h2>Problema</h2>
-                <p>Las hermandades manejan grandes volúmenes de datos de hermanos, cultos, inventario y cuotas. Muchas dependen de procesos manuales o herramientas no especializadas.</p>
-                <h2>Solución</h2>
-                <p>Aplicación web con Spring Boot y Thymeleaf que unifica la administración: registro de hermanos, control de pagos, gestión de eventos y patrimonio.</p>
+                <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
+                <p>No existe en el mercado un juego de simulación serio que permita gestionar una hermandad religiosa con realismo, tomando decisiones como si fueras una junta de gobierno real.</p>
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
+                <p>Un juego basado en texto para Android (desarrollado con Flutter/Dart y base de datos local SQLite) donde gestionas módulos reales como mayordomía, priostía, cultos, tesorería, etc. Toma decisiones, crece tu hermandad y enfréntate a eventos aleatorios.</p>
             </section>
+
             <section class="glass-card">
                 <h2>Tecnologías</h2>
-                <span class="tech-tag">Spring Boot</span><span class="tech-tag">Thymeleaf</span><span class="tech-tag">MySQL</span><span class="tech-tag">Bootstrap</span>
+                <div style="margin-top:1rem;">
+                    <span class="tech-tag">Flutter</span>
+                    <span class="tech-tag">Dart</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">Android</span>
+                </div>
             </section>
+
             <section class="glass-card">
-                <h2>Estado</h2>
-                <p>Desarrollo inicial del módulo de hermanos. Diseño de base de datos completado.</p>
+                <h2>Estado actual</h2>
+                <p>Desarrollo inicial del motor de juego y la interfaz principal. Tengo algunas capturas del prototipo que iré subiendo próximamente. Repositorio privado durante la fase de desarrollo.</p>
             </section>
-            <div style="margin-top:2rem;">
+
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
                 <span class="btn btn-outline" style="opacity:0.6;"><i class="fab fa-github"></i> Repositorio privado</span>
-                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Inicio</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
             </div>
         </main>
     </div>
