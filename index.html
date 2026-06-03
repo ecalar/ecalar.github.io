@@ -20,7 +20,13 @@
     <div class="bg-glow glow-2"></div>
     <div class="bg-glow glow-3"></div>
 
-    <!-- Botón volver arriba -->
+    <!-- Modal para diplomas -->
+    <div class="modal" id="diploma-modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Diploma">
+        <div class="modal-caption" id="modal-caption"></div>
+    </div>
+
     <button id="back-to-top" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
 
     <div class="availability-bar">
@@ -100,68 +106,84 @@
 
             <h3 class="timeline-header" style="margin-top:4rem;">Certificaciones y cursos</h3>
             <div class="certifications-grid">
+                <!-- Certificación 1 -->
                 <div class="cert-card">
                     <i class="fas fa-robot cert-icon"></i>
                     <div class="cert-info">
                         <h4>Certificado de Iniciación al Desarrollo con IA</h4>
                         <p class="cert-issuer">BIG school</p>
                         <p class="cert-date">Expedición: mar. 2026</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-ia-big-school-mar2026.jpg" data-caption="Certificado de Iniciación al Desarrollo con IA - BIG school (mar. 2026)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
+                <!-- Certificación 2 -->
                 <div class="cert-card">
                     <i class="fas fa-code cert-icon"></i>
                     <div class="cert-info">
                         <h4>Curso de Fundamentos de .NET</h4>
                         <p class="cert-issuer">Metal Code</p>
                         <p class="cert-date">Expedición: feb. 2026</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-fundamentos-net-metal-code-feb2026.jpg" data-caption="Curso de Fundamentos de .NET - Metal Code (feb. 2026)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
+                <!-- Certificación 3 -->
                 <div class="cert-card">
                     <i class="fas fa-robot cert-icon"></i>
                     <div class="cert-info">
                         <h4>Curso de Iniciación al Desarrollo con IA</h4>
                         <p class="cert-issuer">BIG school</p>
                         <p class="cert-date">Expedición: oct. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-ia-big-school-oct2025.jpg" data-caption="Curso de Iniciación al Desarrollo con IA - BIG school (oct. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
+                <!-- Certificación 4 -->
                 <div class="cert-card">
                     <i class="fab fa-python cert-icon"></i>
                     <div class="cert-info">
                         <h4>Python</h4>
                         <p class="cert-issuer">Santander Open Academy</p>
                         <p class="cert-date">Expedición: jun. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-python-santander-jun2025.jpg" data-caption="Python - Santander Open Academy (jun. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
+                <!-- Certificación 5 -->
                 <div class="cert-card">
                     <i class="fab fa-java cert-icon"></i>
                     <div class="cert-info">
                         <h4>Java en 13 Días con Aplicaciones del Mundo Real</h4>
                         <p class="cert-issuer">Udemy</p>
                         <p class="cert-date">Expedición: jul. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-java-13-dias-udemy-jul2025.jpg" data-caption="Java en 13 Días - Udemy (jul. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
+                <!-- Certificación 6 -->
                 <div class="cert-card">
                     <i class="fab fa-git-alt cert-icon"></i>
                     <div class="cert-info">
                         <h4>Curso profesional de Git</h4>
                         <p class="cert-issuer">Código Facilito</p>
                         <p class="cert-date">Expedición: ago. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-profesional-git-codigofacilito-ago2025.jpg" data-caption="Curso profesional de Git - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
+                <!-- Certificación 7 -->
                 <div class="cert-card">
                     <i class="fas fa-tasks cert-icon"></i>
                     <div class="cert-info">
                         <h4>Curso de metodologías para solución de problemas</h4>
                         <p class="cert-issuer">Código Facilito</p>
                         <p class="cert-date">Expedición: ago. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-metodologias-solucion-problemas-codigofacilito-ago2025.jpg" data-caption="Metodologías para solución de problemas - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
+                <!-- Certificación 8 -->
                 <div class="cert-card">
                     <i class="fab fa-github cert-icon"></i>
                     <div class="cert-info">
                         <h4>Curso a fondo de GitHub</h4>
                         <p class="cert-issuer">Código Facilito</p>
                         <p class="cert-date">Expedición: ago. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-github-codigofacilito-ago2025.jpg" data-caption="Curso a fondo de GitHub - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
                     </div>
                 </div>
             </div>
@@ -231,14 +253,14 @@
                 <article class="glass-card project-card">
                     <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">En desarrollo</span></div>
                     <h3>miHermandad</h3>
-                    <p>Plataforma de gestión integral para hermandades religiosas. Módulos de hermanos, cultos e inventario.</p>
+                    <p>Plataforma de gestión integral para hermandades religiosas.</p>
                     <span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Thymeleaf</span>
                     <a href="proyectos/mihermandad.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
                 </article>
                 <article class="glass-card project-card">
                     <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">Completado</span></div>
                     <h3>App Recursos Humanos</h3>
-                    <p>Gestión de empleados, nóminas y perfiles con JavaFX y base de datos relacional.</p>
+                    <p>Gestión de empleados, nóminas y perfiles con JavaFX.</p>
                     <span class="tech-tag">JavaFX</span><span class="tech-tag">MVC</span><span class="tech-tag">MySQL</span>
                     <a href="proyectos/rrhh.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
                 </article>
