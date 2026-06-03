@@ -2,36 +2,69 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Gestión Carpintería | Digitalización de taller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Carpintería | Enrique Cala</title>
+    <meta name="description" content="Digitalización de talleres: control de stock, presupuestos y clientes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
+    </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
     <div class="container">
         <nav>
             <a href="../index.html" class="logo">E<span>C.</span></a>
-            <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+            </div>
         </nav>
-        <main>
-            <h1>Gestión Carpintería</h1>
-            <p class="project-subtitle">Aplicación de escritorio para talleres de carpintería</p>
+        <main class="project-detail">
+            <h1>Gestión Carpintería <span class="status-tag">Completado</span></h1>
+            <p class="project-subtitle">Digitalización de talleres de carpintería</p>
+
             <section class="glass-card">
-                <h2>Problema</h2>
-                <p>Talleres artesanales pierden tiempo buscando presupuestos antiguos, controlando manualmente el stock de madera y gestionando clientes con métodos anticuados.</p>
-                <h2>Solución</h2>
-                <p>Herramienta que digitaliza el día a día: inventario de materiales, creación de presupuestos, facturación básica y base de datos de clientes.</p>
+                <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
+                <p>Los talleres de carpintería artesanales aún dependen de libretas y hojas de cálculo para controlar el stock de madera, los presupuestos y la cartera de clientes. Esta falta de digitalización genera pérdidas de tiempo y errores.</p>
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
+                <p>Creé una aplicación de escritorio con Java Swing que permite inventariar materiales, crear y almacenar presupuestos, gestionar clientes y generar facturas básicas. Todo desde una interfaz sencilla y funcional.</p>
             </section>
+
             <section class="glass-card">
                 <h2>Tecnologías</h2>
-                <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span>
+                <div style="margin-top:1rem;">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Swing</span>
+                    <span class="tech-tag">MySQL</span>
+                </div>
             </section>
+
             <section class="glass-card">
                 <h2>Capturas</h2>
-                <div class="gallery"><a href="../assets/img/carpinteria1.jpg"><img src="../assets/img/carpinteria1.jpg"></a></div>
+                <div class="gallery">
+                    <a href="../assets/img/carpinteria1.jpg" target="_blank"><img src="../assets/img/carpinteria1.jpg" alt="Pantalla principal"></a>
+                    <a href="../assets/img/carpinteria2.jpg" target="_blank"><img src="../assets/img/carpinteria2.jpg" alt="Gestión de presupuestos"></a>
+                </div>
             </section>
-            <div style="margin-top:2rem;">
-                <a href="https://github.com/ecalar/Sistema-Gestor-Carpinter-a" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Repositorio público</a>
-                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Inicio</a>
+
+            <section class="glass-card">
+                <h2>Arquitectura y decisiones</h2>
+                <p>Utilicé una arquitectura en dos capas con Swing para la interfaz y JDBC para la conexión a MySQL. La base de datos está normalizada hasta 3FN para evitar redundancias en el inventario.</p>
+            </section>
+
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://github.com/ecalar/Sistema-Gestor-Carpinter-a" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver repositorio</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
             </div>
         </main>
     </div>
