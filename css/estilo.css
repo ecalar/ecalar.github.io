@@ -47,7 +47,14 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 }
 .icon-btn:hover { background: rgba(255,255,255,0.1); border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-3px); }
 
-.hero { display: flex; align-items: center; justify-content: space-between; gap: 4rem; padding: 5rem 0; }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 1rem 0 3rem;         
+    min-height: calc(100vh - 80px);
+}
 .hero-text { flex: 1.2; }
 .badge {
     display: inline-block; padding: 0.5rem 1.2rem; background: rgba(59,130,246,0.1);
