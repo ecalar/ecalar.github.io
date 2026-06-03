@@ -1,1 +1,53 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiStock | Gestión de inventario · TFG DAM</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; }
+        .gallery img { width: 100%; transition: transform 0.3s; }
+        .gallery a:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div>
+    <div class="container">
+        <nav>
+            <a href="../index.html" class="logo">E<span>C.</span></a>
+            <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+        </nav>
+        <main class="project-detail">
+            <h1>MiStock <span class="status-tag">Completado · Nota 8.3</span></h1>
+            <p class="project-subtitle">Sistema de gestión de inventario · TFG DAM</p>
+            <section class="glass-card">
+                <h2>Problema</h2>
+                <p>Pequeños negocios necesitan controlar su inventario sin depender de hojas de cálculo desordenadas ni software genérico difícil de adaptar.</p>
+                <h2>Solución</h2>
+                <p>Desarrollé un software de escritorio con Java Swing, altamente personalizable, que permite gestionar productos, categorías, alertas de stock bajo y generación de reportes. La interfaz sigue un diseño minimalista y moderno.</p>
+            </section>
+            <section class="glass-card">
+                <h2>Tecnologías</h2>
+                <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span><span class="tech-tag">MVC</span><span class="tech-tag">DAO</span>
+            </section>
+            <section class="glass-card">
+                <h2>Capturas</h2>
+                <div class="gallery">
+                    <a href="../assets/img/mistock1.jpg" target="_blank"><img src="../assets/img/mistock1.jpg" alt="Pantalla principal"></a>
+                    <a href="../assets/img/mistock2.jpg" target="_blank"><img src="../assets/img/mistock2.jpg" alt="Gestión de productos"></a>
+                </div>
+            </section>
+            <section class="glass-card">
+                <h2>Arquitectura y decisiones</h2>
+                <p>Usé el patrón MVC con una capa de persistencia DAO. La base de datos se diseñó con MySQL Workbench aplicando normalización 3FN. Implementé validaciones en tiempo real y un sistema de búsqueda con filtros dinámicos.</p>
+            </section>
+            <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                <a href="https://github.com/ecalar/MiStock" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Repositorio público</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Inicio</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
