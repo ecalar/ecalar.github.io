@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customify | Enrique Cala</title>
+    <meta name="description" content="Configurador 3D de productos personalizables. Plataforma SaaS con Spring Boot y Three.js.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
+        .demo-gif { width: 100%; border-radius: 12px; border: 1px solid var(--glass-border); margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
+    <div class="container">
+        <nav>
+            <a href="../index.html" class="logo">E<span>C.</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+            </div>
+        </nav>
+        <main class="project-detail">
+            <h1>Customify <span class="status-tag">En desarrollo</span></h1>
+            <p class="project-subtitle">Configurador 3D de productos personalizables · Proyecto central del portfolio</p>
+
+            <!-- Demo visual (GIF animado) -->
+            <section class="glass-card">
+                <h2><i class="fas fa-play-circle" style="color:var(--accent-blue); margin-right:0.5rem;"></i> Demo en vivo</h2>
+                <img src="../assets/img/customify-demo.gif" alt="Demo del configurador 3D en acción" class="demo-gif" onerror="this.style.display='none'">
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Próximamente: GIF animado del visor 3D personalizando un producto en tiempo real.</p>
+            </section>
+
+            <!-- Problema y solución -->
+            <section class="glass-card">
+                <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
+                <p>Los pequeños y medianos fabricantes (muebles, calzado, merchandising, artesanía) <strong>pierden ventas online</strong> porque solo pueden mostrar fotos estáticas de sus productos. Sus clientes necesitan ver cómo quedaría el producto final con sus elecciones de color, material o tamaño antes de comprar, pero las soluciones actuales cuestan miles de euros o requieren equipos de desarrollo dedicados.</p>
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
+                <p><strong>Customify</strong> es una plataforma SaaS ligera que permite a cualquier fabricante subir un modelo 3D de su producto, definir qué partes son personalizables (color, textura, material) y obtener un enlace público que puede incrustar en su web o compartir con sus clientes. El cliente final ve el producto en 3D dentro del navegador, lo personaliza en tiempo real y ve el precio actualizado al instante.</p>
+            </section>
+
+            <!-- Tecnologías -->
+            <section class="glass-card">
+                <h2>Tecnologías</h2>
+                <div style="margin-top:1rem;">
+                    <span class="tech-tag">Java 17</span>
+                    <span class="tech-tag">Spring Boot 3</span>
+                    <span class="tech-tag">Spring Security</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">JPA/Hibernate</span>
+                    <span class="tech-tag">Flyway</span>
+                    <span class="tech-tag">Three.js</span>
+                    <span class="tech-tag">Thymeleaf</span>
+                    <span class="tech-tag">Bootstrap 5</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">GitHub Actions</span>
+                    <span class="tech-tag">JUnit 5</span>
+                </div>
+            </section>
+
+            <!-- Arquitectura -->
+            <section class="glass-card">
+                <h2>Arquitectura</h2>
+                <p>El proyecto sigue una arquitectura <strong>monorepo</strong> con dos módulos principales:</p>
+                <ul style="margin-top:1rem; margin-left:1.5rem; color:var(--text-muted); line-height:2;">
+                    <li><strong>Backend</strong>: API REST con Spring Boot 3, seguridad JWT, persistencia con JPA/Hibernate y migraciones Flyway sobre MySQL 8. Contenerizado con Docker.</li>
+                    <li><strong>Frontend Visor 3D</strong>: HTML5 + Three.js vanilla (sin frameworks). Carga modelos GLTF/GLB y permite cambiar materiales en tiempo real. Desplegado en GitHub Pages.</li>
+                    <li><strong>Panel de Administración</strong>: Integrado en el backend con Thymeleaf + Bootstrap 5. Permite a los fabricantes subir modelos, definir opciones personalizables y obtener enlaces públicos.</li>
+                </ul>
+                <p style="margin-top:1rem;">CI/CD con <strong>GitHub Actions</strong>: tests automáticos, build y despliegue en Render (backend) y GitHub Pages (visor).</p>
+            </section>
+
+            <!-- Funcionalidades -->
+            <section class="glass-card">
+                <h2>Funcionalidades clave</h2>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-top:1rem;">
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-cube"></i> Visor 3D interactivo</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Rotación, zoom y desplazamiento del modelo 3D con Three.js. Cambio de colores y texturas en tiempo real.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-sliders-h"></i> Personalización dinámica</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">El fabricante define zonas personalizables (color, material, texto grabado) y el cliente ve el precio actualizado al instante.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-cloud-upload-alt"></i> Subida de modelos</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Arrastra y suelta archivos GLTF/GLB. El backend valida, almacena y sirve los modelos de forma segura.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-share-alt"></i> Enlace público</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Cada producto obtiene una URL única que el fabricante puede incrustar en su web o compartir directamente.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Estado actual -->
+            <section class="glass-card">
+                <h2>Estado actual</h2>
+                <p>El proyecto está en <strong>desarrollo activo</strong>. Puedes seguir el progreso en tiempo real en el repositorio público de GitHub, donde se aplican buenas prácticas de CI/CD y testing desde el primer commit.</p>
+            </section>
+
+            <!-- Enlaces -->
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://github.com/ecalar/customify" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver repositorio</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
