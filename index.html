@@ -20,15 +20,6 @@
     <div class="bg-glow glow-2"></div>
     <div class="bg-glow glow-3"></div>
 
-    <!-- Modal para diplomas -->
-    <div class="modal" id="diploma-modal">
-        <span class="modal-close">&times;</span>
-        <div class="modal-card">
-            <img class="modal-content" id="modal-img" alt="Diploma">
-            <div class="modal-caption" id="modal-caption"></div>
-        </div>
-    </div>
-
     <button id="back-to-top" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
 
     <div class="availability-bar">
@@ -93,106 +84,27 @@
                 </div>
             </div>
 
-            <!-- Formación y Cursos en 2 columnas -->
-            <div class="about-two-columns">
-                <!-- Columna izquierda: Evolución formativa -->
-                <div class="glass-card timeline">
-                    <h3 class="timeline-header">Evolución formativa</h3>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2024 - Actualidad</span>
-                        <h4>CFGS Desarrollo de Aplicaciones Multiplataforma</h4>
-                        <p>C#, Java, Kotlin, HTML, CSS, Spring Boot, SQL, patrones de diseño, etc.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2018 - 2020</span>
-                        <h4>Animación 3D, Juegos y Entornos Interactivos</h4>
-                        <p>Diseño de interfaces, assets 2D/3D, interactividad.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2013 - 2015</span>
-                        <h4>Sistemas Microinformáticos y Redes</h4>
-                        <p>Hardware, SO, administración de sistemas.</p>
-                    </div>
+            <div class="glass-card timeline">
+                <h3 class="timeline-header">Evolución formativa</h3>
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 - Actualidad</span>
+                    <h4>CFGS Desarrollo de Aplicaciones Multiplataforma</h4>
+                    <p>C#, Java, Kotlin, HTML, CSS, Spring Boot, SQL, patrones de diseño, etc.</p>
                 </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2018 - 2020</span>
+                    <h4>Animación 3D, Juegos y Entornos Interactivos</h4>
+                    <p>Diseño de interfaces, assets 2D/3D, interactividad.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2013 - 2015</span>
+                    <h4>Sistemas Microinformáticos y Redes</h4>
+                    <p>Hardware, SO, administración de sistemas.</p>
+                </div>
+            </div>
 
-                <!-- Columna derecha: Certificaciones -->
-                <div class="certifications-column">
-                    <h3 class="timeline-header">Certificaciones y cursos</h3>
-                    <div class="certifications-grid">
-                        <div class="cert-card">
-                            <i class="fas fa-robot cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Certificado de Iniciación al Desarrollo con IA</h4>
-                                <p class="cert-issuer">BIG school</p>
-                                <p class="cert-date">Expedición: mar. 2026</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-ia-big-school-mar2026.jpg" data-caption="Certificado de Iniciación al Desarrollo con IA - BIG school (mar. 2026)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fas fa-code cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Curso de Fundamentos de .NET</h4>
-                                <p class="cert-issuer">Metal Code</p>
-                                <p class="cert-date">Expedición: feb. 2026</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-fundamentos-net-metal-code-feb2026.jpg" data-caption="Curso de Fundamentos de .NET - Metal Code (feb. 2026)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fas fa-robot cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Curso de Iniciación al Desarrollo con IA</h4>
-                                <p class="cert-issuer">BIG school</p>
-                                <p class="cert-date">Expedición: oct. 2025</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-ia-big-school-oct2025.jpg" data-caption="Curso de Iniciación al Desarrollo con IA - BIG school (oct. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-python cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Python</h4>
-                                <p class="cert-issuer">Santander Open Academy</p>
-                                <p class="cert-date">Expedición: jun. 2025</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-python-santander-jun2025.jpg" data-caption="Python - Santander Open Academy (jun. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-java cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Java en 13 Días con Aplicaciones del Mundo Real</h4>
-                                <p class="cert-issuer">Udemy</p>
-                                <p class="cert-date">Expedición: jul. 2025</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-java-13-dias-udemy-jul2025.jpg" data-caption="Java en 13 Días - Udemy (jul. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-git-alt cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Curso profesional de Git</h4>
-                                <p class="cert-issuer">Código Facilito</p>
-                                <p class="cert-date">Expedición: ago. 2025</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-profesional-git-codigofacilito-ago2025.jpg" data-caption="Curso profesional de Git - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fas fa-tasks cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Curso de metodologías para solución de problemas</h4>
-                                <p class="cert-issuer">Código Facilito</p>
-                                <p class="cert-date">Expedición: ago. 2025</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-metodologias-solucion-problemas-codigofacilito-ago2025.jpg" data-caption="Metodologías para solución de problemas - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-github cert-icon"></i>
-                            <div class="cert-info">
-                                <h4>Curso a fondo de GitHub</h4>
-                                <p class="cert-issuer">Código Facilito</p>
-                                <p class="cert-date">Expedición: ago. 2025</p>
-                                <button class="diploma-btn" data-img="assets/certificados/cert-github-codigofacilito-ago2025.jpg" data-caption="Curso a fondo de GitHub - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div style="text-align:center; margin-top:2rem;">
+                <a href="certificaciones.html" class="btn btn-outline"><i class="fas fa-certificate"></i> Ver certificaciones y cursos</a>
             </div>
         </section>
 
@@ -243,9 +155,8 @@
             <h2 class="section-title">Proyectos destacados</h2>
             <p class="section-subtitle">Cada proyecto tiene su propia página con detalles, capturas y decisiones técnicas.</p>
             <div class="projects-grid">
-                <!-- Customify (NUEVO) -->
                 <article class="glass-card project-card">
-                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">En desarrollo</span></div>
+                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">Completado</span></div>
                     <h3>Customify</h3>
                     <p>Configurador 3D de productos personalizables. SaaS con Spring Boot y Three.js.</p>
                     <span class="tech-tag">Spring Boot</span><span class="tech-tag">Three.js</span><span class="tech-tag">Docker</span>
@@ -286,16 +197,10 @@
                     <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span>
                     <a href="proyectos/carpinteria.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
                 </article>
-                <article class="glass-card project-card">
-                    <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">Completado</span></div>
-                    <h3>Sistema Estudiantes Spring</h3>
-                    <p>CRUD completo con Spring Boot, validaciones y arquitectura en capas.</p>
-                    <span class="tech-tag">Spring Boot</span><span class="tech-tag">Thymeleaf</span><span class="tech-tag">JPA</span>
-                    <a href="proyectos/estudiantes-spring.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-                </article>
             </div>
             <h3 style="text-align:center; margin-top:4rem;">Otros proyectos</h3>
             <ul class="other-projects-list">
+                <li><a href="proyectos/estudiantes-spring.html">Sistema Estudiantes Spring</a></li>
                 <li><a href="https://github.com/ecalar/SistemaContactos" target="_blank">Sistema Contactos</a></li>
                 <li><a href="https://github.com/ecalar/SistemaCuentasBancarias" target="_blank">Cuentas Bancarias</a></li>
                 <li><a href="https://github.com/ecalar/ArchivadorDigital" target="_blank">Archivador Digital</a></li>
