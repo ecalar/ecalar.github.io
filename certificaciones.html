@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificaciones | Enrique Cala</title>
+    <meta name="description" content="Certificaciones y cursos de Enrique Cala.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
+
+    <!-- Modal para diplomas -->
+    <div class="modal" id="diploma-modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-card">
+            <img class="modal-content" id="modal-img" alt="Diploma">
+            <div class="modal-caption" id="modal-caption"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">E<span>C.</span></a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+            </div>
+        </nav>
+
+        <main style="padding-top:3rem; padding-bottom:3rem;">
+            <h2 class="section-title">Certificaciones y cursos</h2>
+            <p class="section-subtitle">Formación complementaria que respalda mi stack técnico.</p>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <i class="fas fa-robot cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Certificado de Iniciación al Desarrollo con IA</h4>
+                        <p class="cert-issuer">BIG school</p>
+                        <p class="cert-date">Expedición: mar. 2026</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-ia-big-school-mar2026.jpg" data-caption="Certificado de Iniciación al Desarrollo con IA - BIG school (mar. 2026)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-code cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Curso de Fundamentos de .NET</h4>
+                        <p class="cert-issuer">Metal Code</p>
+                        <p class="cert-date">Expedición: feb. 2026</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-fundamentos-net-metal-code-feb2026.jpg" data-caption="Curso de Fundamentos de .NET - Metal Code (feb. 2026)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-robot cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Curso de Iniciación al Desarrollo con IA</h4>
+                        <p class="cert-issuer">BIG school</p>
+                        <p class="cert-date">Expedición: oct. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-ia-big-school-oct2025.jpg" data-caption="Curso de Iniciación al Desarrollo con IA - BIG school (oct. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fab fa-python cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Python</h4>
+                        <p class="cert-issuer">Santander Open Academy</p>
+                        <p class="cert-date">Expedición: jun. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-python-santander-jun2025.jpg" data-caption="Python - Santander Open Academy (jun. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fab fa-java cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Java en 13 Días con Aplicaciones del Mundo Real</h4>
+                        <p class="cert-issuer">Udemy</p>
+                        <p class="cert-date">Expedición: jul. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-java-13-dias-udemy-jul2025.jpg" data-caption="Java en 13 Días - Udemy (jul. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fab fa-git-alt cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Curso profesional de Git</h4>
+                        <p class="cert-issuer">Código Facilito</p>
+                        <p class="cert-date">Expedición: ago. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-profesional-git-codigofacilito-ago2025.jpg" data-caption="Curso profesional de Git - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-tasks cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Curso de metodologías para solución de problemas</h4>
+                        <p class="cert-issuer">Código Facilito</p>
+                        <p class="cert-date">Expedición: ago. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-metodologias-solucion-problemas-codigofacilito-ago2025.jpg" data-caption="Metodologías para solución de problemas - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fab fa-github cert-icon"></i>
+                    <div class="cert-info">
+                        <h4>Curso a fondo de GitHub</h4>
+                        <p class="cert-issuer">Código Facilito</p>
+                        <p class="cert-date">Expedición: ago. 2025</p>
+                        <button class="diploma-btn" data-img="assets/certificados/cert-github-codigofacilito-ago2025.jpg" data-caption="Curso a fondo de GitHub - Código Facilito (ago. 2025)">Ver diploma <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
