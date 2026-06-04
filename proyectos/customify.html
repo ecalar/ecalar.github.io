@@ -18,7 +18,7 @@
         .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
         .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
         .gallery img { width: 100%; display: block; }
-        .demo-gif { width: 100%; border-radius: 12px; border: 1px solid var(--glass-border); margin-top: 1rem; }
+        .demo-gif { width: 100%; border-radius: 12px; border: 1px solid var(--glass-border); margin-top: 0.5rem; }
     </style>
 </head>
 <body>
@@ -34,11 +34,23 @@
             <h1>Customify <span class="status-tag">En desarrollo</span></h1>
             <p class="project-subtitle">Configurador 3D de productos personalizables · Proyecto central del portfolio</p>
 
-            <!-- Demo visual (GIF animado) -->
+            <!-- Demo visual -->
             <section class="glass-card">
                 <h2><i class="fas fa-play-circle" style="color:var(--accent-blue); margin-right:0.5rem;"></i> Demo en vivo</h2>
-                <img src="../assets/img/customify-demo.gif" alt="Demo del configurador 3D en acción" class="demo-gif" onerror="this.style.display='none'">
-                <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Próximamente: GIF animado del visor 3D personalizando un producto en tiempo real.</p>
+                
+                <h3 style="margin-top:1.5rem; margin-bottom:0.5rem; color:var(--text-main);">Visor 3D en acción</h3>
+                <img src="../assets/img/visor3d.gif" alt="Demo del configurador 3D personalizando un producto en tiempo real" class="demo-gif" onerror="this.style.display='none'">
+                
+                <h3 style="margin-top:2rem; margin-bottom:0.5rem; color:var(--text-main);">Panel de administración</h3>
+                <div class="gallery">
+                    <a href="../assets/img/login.png" target="_blank">
+                        <img src="../assets/img/login.png" alt="Pantalla de inicio de sesión">
+                    </a>
+                    <a href="../assets/img/dashboard.png" target="_blank">
+                        <img src="../assets/img/dashboard.png" alt="Dashboard de gestión de productos">
+                    </a>
+                </div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imágenes para verlas en grande.</p>
             </section>
 
             <!-- Problema y solución -->
