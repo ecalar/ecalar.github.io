@@ -206,6 +206,33 @@ section { padding: 5rem 0; }
 
 footer { text-align: center; padding: 2rem; border-top: 1px solid var(--glass-border); margin-top: 4rem; color: var(--text-muted); }
 
+/* Layout de 2 columnas para Formación + Cursos */
+.about-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.certifications-column .timeline-header {
+    margin-bottom: 1.5rem;
+}
+.certifications-column .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.certifications-column .cert-card {
+    padding: 1.5rem;
+}
+.certifications-column .cert-card h4 {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .about-two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Menú hamburguesa */
 .nav-actions { display: flex; align-items: center; gap: 1rem; }
 .hamburger { display: none; flex-direction: column; justify-content: space-around; width: 28px; height: 22px; background: transparent; border: none; cursor: pointer; z-index: 1100; }
