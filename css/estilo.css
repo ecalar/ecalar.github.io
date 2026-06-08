@@ -33,6 +33,20 @@ body { background: var(--bg-base); color: var(--text-main); line-height: 1.7; ov
 }
 .status-dot { display: inline-block; width: 8px; height: 8px; background: #10b981; border-radius: 50%; margin-right: 0.5rem; box-shadow: 0 0 10px #10b981; }
 
+.status-tag {
+    background: rgba(245,158,11,0.1);
+    color: #f59e0b;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-tag-complete {
+    background: rgba(16,185,129,0.1);
+    color: #10b981;
+}
+
 nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; }
 .logo { font-size: 1.8rem; font-weight: 800; text-decoration: none; color: #fff; }
 .logo span { color: var(--accent-blue); }
