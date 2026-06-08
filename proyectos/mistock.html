@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiStock | Enrique Cala</title>
-    <meta name="description" content="Sistema de gestión de inventario personalizable. TFG DAM con nota 8.3.">
+    <meta name="description" content="App Android de gestion de inventario. TFG DAM con Kotlin, Room y Material Design 3. Nota 8.3.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -30,24 +30,27 @@
             </div>
         </nav>
         <main class="project-detail">
-            <h1>MiStock <span class="status-tag">Completado · Nota 8.3</span></h1>
-            <p class="project-subtitle">Sistema de gestión de inventario personalizable · TFG DAM</p>
+            <h1>MiStock <span class="status-tag completed">Completado · Nota 8.3</span></h1>
+            <p class="project-subtitle">App Android de gestion de inventario · TFG DAM</p>
 
             <section class="glass-card">
                 <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
-                <p>Pequeños negocios y autónomos necesitan controlar su inventario de forma ágil y visual, pero las soluciones actuales son demasiado genéricas, caras o requieren formación. La mayoría termina dependiendo de hojas de cálculo desordenadas o de software que no se adapta a su flujo de trabajo real.</p>
-                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
-                <p>Desarrollé MiStock, un software de escritorio con Java Swing altamente personalizable. Permite gestionar productos y categorías, registrar movimientos de entrada y salida de stock, configurar alertas de stock bajo y generar reportes en PDF. La interfaz sigue un diseño minimalista, moderno y funcional, pensado para que cualquier usuario pueda utilizarlo sin formación previa.</p>
+                <p>Pequeños negocios y autonomas necesitan controlar su inventario de forma agil y visual, pero las soluciones actuales son demasiado genericas, caras o requieren formacion. La mayoria termina dependiendo de hojas de calculo desordenadas o de software que no se adapta a su flujo de trabajo real.</p>
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solucion</h2>
+                <p>Desarrolle <strong>MiStock</strong>, una aplicacion Android nativa con <strong>Kotlin</strong> y arquitectura <strong>MVVM</strong>. Permite gestionar productos y categorias, registrar movimientos de entrada y salida de stock, configurar alertas de stock bajo y visualizar el inventario con una interfaz moderna gracias a <strong>Material Design 3</strong>. La persistencia local se gestiona con <strong>Room</strong>, lo que permite un acceso rapido y fiable a los datos sin necesidad de conexion a internet.</p>
             </section>
 
             <section class="glass-card">
-                <h2>Tecnologías</h2>
+                <h2>Tecnologias</h2>
                 <div style="margin-top:1rem;">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Swing</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">MVC</span>
-                    <span class="tech-tag">DAO</span>
+                    <span class="tech-tag">Kotlin</span>
+                    <span class="tech-tag">Android</span>
+                    <span class="tech-tag">Room</span>
+                    <span class="tech-tag">MVVM</span>
+                    <span class="tech-tag">Material Design 3</span>
+                    <span class="tech-tag">Corrutinas</span>
+                    <span class="tech-tag">LiveData</span>
+                    <span class="tech-tag">SQLite</span>
                 </div>
             </section>
 
@@ -55,17 +58,17 @@
                 <h2>Capturas</h2>
                 <div class="gallery">
                     <a href="../assets/img/mistock1.jpg" target="_blank"><img src="../assets/img/mistock1.jpg" alt="Pantalla principal de MiStock"></a>
-                    <a href="../assets/img/mistock2.jpg" target="_blank"><img src="../assets/img/mistock2.jpg" alt="Gestión de productos"></a>
+                    <a href="../assets/img/mistock2.jpg" target="_blank"><img src="../assets/img/mistock2.jpg" alt="Gestion de productos"></a>
                     <a href="../assets/img/mistock3.jpg" target="_blank"><img src="../assets/img/mistock3.jpg" alt="Alertas de stock"></a>
                 </div>
-                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imágenes para verlas en grande.</p>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imagenes para verlas en grande.</p>
             </section>
 
             <section class="glass-card">
-                <h2>Arquitectura y decisiones técnicas</h2>
-                <p>Implementé el patrón <strong>MVC</strong> (Modelo-Vista-Controlador) para separar la lógica de negocio de la interfaz gráfica, complementado con una capa de persistencia <strong>DAO</strong> (Data Access Object) que abstrae el acceso a la base de datos.</p>
-                <p>La base de datos se diseñó con <strong>MySQL Workbench</strong>, aplicando normalización hasta <strong>3FN</strong> para evitar redundancias y garantizar la integridad de los datos. La conexión se gestiona mediante <strong>JDBC</strong> con un patrón Singleton para optimizar recursos.</p>
-                <p>Entre las funcionalidades más destacadas: validaciones en tiempo real en los formularios, sistema de búsqueda con filtros dinámicos, alertas visuales cuando el stock está por debajo del mínimo configurado, y generación de reportes en <strong>PDF</strong> utilizando la librería iText.</p>
+                <h2>Arquitectura y decisiones tecnicas</h2>
+                <p>Implemente el patron <strong>MVVM</strong> (Model-View-ViewModel) siguiendo la guia de arquitectura oficial de Android. La capa de datos utiliza <strong>Room</strong> como abstraccion sobre SQLite, con <strong>DAO</strong> para las consultas y <strong>corrutinas</strong> de Kotlin para operaciones asincronas.</p>
+                <p>La interfaz sigue las directrices de <strong>Material Design 3</strong>, con temas dinamicos, navegacion fluida y componentes modernos como <strong>RecyclerView</strong> con animaciones y <strong>SearchView</strong> para busquedas.</p>
+                <p>Entre las funcionalidades mas destacadas: validaciones en tiempo real en los formularios, sistema de busqueda con filtros dinamicos, alertas visuales cuando el stock esta por debajo del minimo configurado, y generacion de reportes en <strong>PDF</strong>.</p>
             </section>
 
             <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
