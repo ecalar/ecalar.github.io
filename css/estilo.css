@@ -42,7 +42,7 @@ body { background: var(--bg-base); color: var(--text-main); line-height: 1.7; ov
     font-weight: 600;
 }
 
-.status-tag-complete {
+.status-tag.completed {
     background: rgba(16,185,129,0.1);
     color: #10b981;
 }
