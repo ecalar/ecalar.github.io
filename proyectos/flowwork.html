@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlowWork | Enrique Cala</title>
-    <meta name="description" content="Plataforma de gestión de equipos con microservicios. Spring Boot, Spring Cloud, RabbitMQ y React.">
+    <meta name="description" content="Plataforma de gestion de equipos con microservicios. Spring Boot, Spring Cloud, RabbitMQ y React.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -22,52 +22,67 @@
     </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+
     <div class="container">
         <nav>
             <a href="../index.html" class="logo">E<span>C.</span></a>
             <div class="nav-actions">
-                <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+                <a href="../index.html#projects" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> Volver al portfolio
+                </a>
             </div>
         </nav>
+
         <main class="project-detail">
             <h1>FlowWork <span class="status-tag">En desarrollo</span></h1>
-            <p class="project-subtitle">Plataforma de gestion de equipos con microservicios · Proyecto de portfolio avanzado</p>
+            <p class="project-subtitle">Plataforma de gestion de equipos con microservicios · Proyecto central del portfolio</p>
 
-            <!-- Demo visual -->
+            <!-- Capturas de pantalla -->
             <section class="glass-card">
-                <h2><i class="fas fa-play-circle" style="color:var(--accent-blue); margin-right:0.5rem;"></i> Demo en vivo</h2>
-                
-                <h3 style="margin-top:2rem; margin-bottom:0.5rem; color:var(--text-main);">Pantallas principales</h3>
-<div class="gallery">
-    <a href="../assets/img/login.png" target="_blank">
-        <img src="../assets/img/login.png" alt="Pantalla de inicio de sesión">
-    </a>
-    <a href="../assets/img/dashboard.png" target="_blank">
-        <img src="../assets/img/dashboard.png" alt="Dashboard principal">
-    </a>
-    <a href="../assets/img/tasks-grid.png" target="_blank">
-        <img src="../assets/img/tasks-grid.png" alt="Vista grid de tareas">
-    </a>
-    <a href="../assets/img/tasks-kanban.png" target="_blank">
-        <img src="../assets/img/tasks-kanban.png" alt="Vista Kanban">
-    </a>
-    <a href="../assets/img/chat.png" target="_blank">
-        <img src="../assets/img/chat.png" alt="Chat vinculado a tarea">
-    </a>
-    <a href="../assets/img/reports.png" target="_blank">
-        <img src="../assets/img/reports.png" alt="Reportes de tiempo con gráficos">
-    </a>
-</div>
+                <h2><i class="fas fa-images" style="color:var(--accent-blue); margin-right:0.5rem;"></i> Capturas de pantalla</h2>
+                <div class="gallery">
+                    <a href="../assets/img/login.png" target="_blank">
+                        <img src="../assets/img/login.png" alt="Pantalla de inicio de sesion">
+                    </a>
+                    <a href="../assets/img/dashboard.png" target="_blank">
+                        <img src="../assets/img/dashboard.png" alt="Dashboard principal">
+                    </a>
+                    <a href="../assets/img/tasks-grid.png" target="_blank">
+                        <img src="../assets/img/tasks-grid.png" alt="Vista grid de tareas">
+                    </a>
+                    <a href="../assets/img/tasks-kanban.png" target="_blank">
+                        <img src="../assets/img/tasks-kanban.png" alt="Vista Kanban">
+                    </a>
+                    <a href="../assets/img/chat.png" target="_blank">
+                        <img src="../assets/img/chat.png" alt="Chat vinculado a tarea">
+                    </a>
+                    <a href="../assets/img/reports.png" target="_blank">
+                        <img src="../assets/img/reports.png" alt="Reportes de tiempo con graficos">
+                    </a>
+                </div>
                 <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imagenes para verlas en grande.</p>
             </section>
 
             <!-- Problema y solucion -->
             <section class="glass-card">
                 <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
-                <p>Los equipos pequeños y medianos (startups, agencias, consultoras) necesitan gestionar tareas, comunicacion y seguimiento de tiempo, pero se ven obligados a usar <strong>3 herramientas distintas</strong> (Trello + Slack + Clockify). Esto genera friccion, perdida de contexto y gastos innecesarios. Las alternativas todo-en-uno como Monday.com son caras y complejas.</p>
+                <p>
+                    Los equipos pequeños y medianos (startups, agencias, consultoras) necesitan gestionar tareas,
+                    comunicacion y seguimiento de tiempo, pero se ven obligados a usar <strong>3 herramientas distintas</strong>
+                    (Trello + Slack + Clockify). Esto genera friccion, perdida de contexto y gastos innecesarios.
+                    Las alternativas todo-en-uno como Monday.com son caras y complejas.
+                </p>
+
                 <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solucion</h2>
-                <p><strong>FlowWork</strong> unifica la gestion de proyectos con chat en tiempo real y control horario en una sola plataforma ligera, rapida y de codigo abierto. Esta construida con una <strong>arquitectura de microservicios</strong> que garantiza escalabilidad, resiliencia y despliegue independiente de cada modulo.</p>
+                <p>
+                    <strong>FlowWork</strong> unifica la gestion de proyectos con chat en tiempo real y control horario
+                    en una sola plataforma ligera, rapida y de codigo abierto. Esta construida con una
+                    <strong>arquitectura de microservicios</strong> que garantiza escalabilidad, resiliencia y
+                    despliegue independiente de cada modulo.
+                </p>
             </section>
 
             <!-- Tecnologias -->
@@ -86,21 +101,32 @@
                     <span class="tech-tag">Tailwind CSS</span>
                     <span class="tech-tag">Docker</span>
                     <span class="tech-tag">GitHub Actions</span>
+                    <span class="tech-tag">Chart.js</span>
+                    <span class="tech-tag">JWT</span>
                 </div>
             </section>
 
             <!-- Arquitectura -->
             <section class="glass-card">
                 <h2>Arquitectura de microservicios</h2>
-                <p>FlowWork esta compuesto por <strong>4 servicios independientes</strong>, cada uno con su propia base de datos PostgreSQL, comunicados de forma asincrona mediante RabbitMQ:</p>
+                <p>
+                    FlowWork esta compuesto por <strong>4 servicios independientes</strong>, cada uno con su propia
+                    base de datos PostgreSQL, comunicados de forma asincrona mediante RabbitMQ:
+                </p>
                 <ul style="margin-top:1rem; margin-left:1.5rem; color:var(--text-muted); line-height:2;">
                     <li><strong>Task Service</strong>: CRUD de proyectos, tareas y estados. Tablero Kanban con drag & drop.</li>
-                    <li><strong>Chat Service</strong>: Mensajeria en tiempo real con WebSocket + STOMP. Salas por proyecto.</li>
-                    <li><strong>Time Service</strong>: Registro de horas, timer inicio/stop y reportes de tiempo.</li>
-                    <li><strong>API Gateway</strong>: Spring Cloud Gateway con autenticacion JWT centralizada, rate limiting y enrutamiento dinamico via Eureka.</li>
+                    <li><strong>Chat Service</strong>: Mensajeria en tiempo real con WebSocket + STOMP. Salas por tarea.</li>
+                    <li><strong>Time Service</strong>: Registro de horas, timer inicio/stop y reportes con graficos.</li>
+                    <li><strong>API Gateway</strong>: Spring Cloud Gateway con autenticacion JWT, rate limiting y enrutamiento via Eureka.</li>
                 </ul>
-                <p style="margin-top:1rem;"><strong>Service Discovery</strong> con Eureka Server: cada microservicio se registra al arrancar y el Gateway los descubre automaticamente.</p>
-                <p><strong>Event Bus</strong> con RabbitMQ: eventos como <code>task.completed</code> o <code>time.entry.created</code> se propagan entre servicios sin acoplamiento directo.</p>
+                <p style="margin-top:1rem;">
+                    <strong>Service Discovery</strong> con Eureka Server: cada microservicio se registra al arrancar
+                    y el Gateway los descubre automaticamente.
+                </p>
+                <p>
+                    <strong>Event Bus</strong> con RabbitMQ: eventos como <code>task.completed</code> o
+                    <code>time.entry.created</code> se propagan entre servicios sin acoplamiento directo.
+                </p>
             </section>
 
             <!-- Funcionalidades -->
@@ -109,19 +135,27 @@
                 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-top:1rem;">
                     <div>
                         <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Tablero Kanban</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Drag & drop de tareas entre columnas (Backlog, Todo, In Progress, Done). Vista por proyecto y por responsable.</p>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Drag & drop de tareas entre columnas. Vista por proyecto y por responsable.</p>
                     </div>
                     <div>
                         <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Chat en tiempo real</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">WebSocket + STOMP para mensajeria instantanea. Salas vinculadas a proyectos.</p>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">WebSocket + STOMP para mensajeria instantanea. Salas vinculadas a cada tarea.</p>
                     </div>
                     <div>
                         <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Control horario</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Timer con inicio/stop por tarea. Registro automatico de duracion y reportes por usuario y proyecto.</p>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Timer con inicio/stop por tarea. Graficos de horas trabajadas por dia y por proyecto.</p>
                     </div>
                     <div>
                         <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Eventos asincronos</h4>
                         <p style="font-size:0.9rem; color:var(--text-muted);">RabbitMQ propaga eventos entre servicios. Si un servicio falla, los demas siguen funcionando.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Notificaciones toast</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Feedback visual en tiempo real para cada accion: crear, completar, eliminar tareas.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Registro y login</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Autenticacion JWT con registro de usuarios. Datos filtrados por usuario.</p>
                     </div>
                 </div>
             </section>
@@ -129,14 +163,23 @@
             <!-- Estado actual -->
             <section class="glass-card">
                 <h2>Estado actual</h2>
-                <p>El proyecto esta en <strong>desarrollo activo</strong>. La infraestructura base (Eureka Server, API Gateway y Docker Compose) ya esta operativa, junto con el CRUD completo de tareas, el chat en tiempo real y el control horario. Puedes seguir el progreso en tiempo real en GitHub.</p>
+                <p>
+                    El proyecto esta en <strong>desarrollo activo</strong> con mas de 50 commits.
+                    Infraestructura de microservicios operativa, CRUD completo de tareas, chat en tiempo real
+                    con WebSocket, control horario con graficos, y panel Kanban con drag & drop.
+                    Puedes seguir el progreso en tiempo real en GitHub.
+                </p>
             </section>
 
             <!-- Enlaces -->
             <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
-    <a href="https://github.com/ecalar/flowwork" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver repositorio</a>
-    <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
-</div>
+                <a href="https://github.com/ecalar/flowwork" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i> Ver repositorio
+                </a>
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Volver al inicio
+                </a>
+            </div>
         </main>
     </div>
 </body>
