@@ -3,241 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrique Cala | Desarrollador DAM · Portfolio 2026</title>
-    <meta name="description" content="Portfolio de Enrique Cala, desarrollador de aplicaciones multiplataforma. Busco prácticas FCT en remoto (385h). Especializado en Java, Spring Boot y diseño de interfaces.">
-    <meta property="og:title" content="Enrique Cala · Desarrollador DAM">
-    <meta property="og:description" content="Busco prácticas FCT en remoto. Proyectos sólidos, planificación y código limpio.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ecalar.github.io">
+    <title>MiStock | Enrique Cala</title>
+    <meta name="description" content="App Android de gestion de inventario. TFG DAM con Kotlin, Room y Material Design 3. Nota 8.3.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
+    </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-    <div class="bg-glow glow-3"></div>
-
-    <button id="back-to-top" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
-
-    <div class="availability-bar">
-        <span class="status-dot"></span> En Busqueda de Prácticas FCT en remoto · 385h · Morón de la Frontera (Sevilla)
-    </div>
-
+    <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div>
     <div class="container">
         <nav>
-            <a href="#" class="logo">E<span>C</span></a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
+            <a href="../index.html" class="logo">E<span>C.</span></a>
             <div class="nav-actions">
-                <div class="social-icons">
-                    <a href="mailto:enriquecalar@gmail.com" class="icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/ecalar" target="_blank" class="icon-btn"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/enrique-cala-rodr%C3%ADguez-21032491/" target="_blank" class="icon-btn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <button class="hamburger" id="hamburger" aria-label="Menú">
-                    <span></span><span></span><span></span>
-                </button>
+                <a href="../index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
             </div>
         </nav>
+        <main class="project-detail">
+            <h1>MiStock <span class="status-tag completed">Completado · Nota 8.3</span></h1>
+            <p class="project-subtitle">App Android de gestion de inventario · TFG DAM</p>
 
-        <header class="hero">
-            <div class="hero-text">
-                <span class="badge">En Busqueda de Prácticas FCT · 385 horas · Remoto</span>
-                <h1>Enrique <br><span class="gradient-text">Cala Rodríguez.</span></h1>
-                <p>Desarrollador de software con visión 360º. Planificación, arquitectura y código limpio en Java / Spring Boot. Busco empresa donde aportar y seguir aprendiendo.</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> Ver proyectos</a>
-                    <a href="assets/cv/enrique_cala_cv.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Descargar CV</a>
-                </div>
-            </div>
-            <div class="hero-img-wrapper">
-                <div class="hero-img-bg"></div>
-                <img src="assets/img/avatar.jpg" alt="Enrique Cala" class="hero-img" onerror="this.src='https://ui-avatars.com/api/?name=Enrique+Cala&background=111&color=fff&size=500&bold=true'">
-            </div>
-        </header>
+            <section class="glass-card">
+                <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
+                <p>Pequeños negocios y autonomas necesitan controlar su inventario de forma agil y visual, pero las soluciones actuales son demasiado genericas, caras o requieren formacion. La mayoria termina dependiendo de hojas de calculo desordenadas o de software que no se adapta a su flujo de trabajo real.</p>
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solucion</h2>
+                <p>Desarrolle <strong>MiStock</strong>, una aplicacion Android nativa con <strong>Kotlin</strong> y arquitectura <strong>MVVM</strong>. Permite gestionar productos y categorias, registrar movimientos de entrada y salida de stock, configurar alertas de stock bajo y visualizar el inventario con una interfaz moderna gracias a <strong>Material Design 3</strong>. La persistencia local se gestiona con <strong>Room</strong>, lo que permite un acceso rapido y fiable a los datos sin necesidad de conexion a internet.</p>
+            </section>
 
-        <section id="about">
-            <h2 class="section-title">Un perfil completo</h2>
-            <p class="section-subtitle">Tres pilares formativos que me permiten entender el software desde el hardware hasta la experiencia de usuario.</p>
-            <div class="philosophy-grid">
-                <div class="glass-card">
-                    <i class="fas fa-layer-group card-icon"></i>
-                    <h3>Visión 360º</h3>
-                    <p>Microinformática y redes → Animación 3D / UX → Desarrollo DAM. Entiendo las limitaciones del sistema y las necesidades del usuario final.</p>
+            <section class="glass-card">
+                <h2>Tecnologias</h2>
+                <div style="margin-top:1rem;">
+                    <span class="tech-tag">Kotlin</span>
+                    <span class="tech-tag">Android</span>
+                    <span class="tech-tag">Room</span>
+                    <span class="tech-tag">MVVM</span>
+                    <span class="tech-tag">Material Design 3</span>
+                    <span class="tech-tag">Corrutinas</span>
+                    <span class="tech-tag">LiveData</span>
+                    <span class="tech-tag">SQLite</span>
                 </div>
-                <div class="glass-card">
-                    <i class="fas fa-project-diagram card-icon"></i>
-                    <h3>Planificación antes que código</h3>
-                    <p>Nunca empiezo sin un esquema claro: diseño de BD, arquitectura, casos de uso. Esto reduce horas de refactorización.</p>
-                </div>
-                <div class="glass-card">
-                    <i class="fas fa-heart card-icon"></i>
-                    <h3>Frontend con sentido</h3>
-                    <p>Disfruto creando interfaces limpias y funcionales. Mi formación en animación 3D me da un extra en diseño visual y UX.</p>
-                </div>
-            </div>
+            </section>
 
-            <div class="glass-card timeline">
-                <h3 class="timeline-header">Evolución formativa</h3>
-                <div class="timeline-item">
-                    <span class="timeline-date">2024 - Actualidad</span>
-                    <h4>CFGS Desarrollo de Aplicaciones Multiplataforma</h4>
-                    <p>C#, Java, Kotlin, HTML, CSS, Spring Boot, SQL, patrones de diseño, etc.</p>
+            <section class="glass-card">
+                <h2>Capturas</h2>
+                <div class="gallery">
+                    <a href="../assets/img/mistock1.jpg" target="_blank"><img src="../assets/img/mistock1.jpg" alt="Pantalla principal de MiStock"></a>
+                    <a href="../assets/img/mistock2.jpg" target="_blank"><img src="../assets/img/mistock2.jpg" alt="Gestion de productos"></a>
+                    <a href="../assets/img/mistock3.jpg" target="_blank"><img src="../assets/img/mistock3.jpg" alt="Alertas de stock"></a>
                 </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2018 - 2020</span>
-                    <h4>Animación 3D, Juegos y Entornos Interactivos</h4>
-                    <p>Diseño de interfaces, assets 2D/3D, interactividad.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2013 - 2015</span>
-                    <h4>Sistemas Microinformáticos y Redes</h4>
-                    <p>Hardware, SO, administración de sistemas.</p>
-                </div>
-            </div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imagenes para verlas en grande.</p>
+            </section>
 
-            <div style="text-align:center; margin-top:2rem;">
-                <a href="certificaciones.html" class="btn btn-outline"><i class="fas fa-certificate"></i> Ver certificaciones y cursos</a>
-            </div>
-        </section>
+            <section class="glass-card">
+                <h2>Arquitectura y decisiones tecnicas</h2>
+                <p>Implemente el patron <strong>MVVM</strong> (Model-View-ViewModel) siguiendo la guia de arquitectura oficial de Android. La capa de datos utiliza <strong>Room</strong> como abstraccion sobre SQLite, con <strong>DAO</strong> para las consultas y <strong>corrutinas</strong> de Kotlin para operaciones asincronas.</p>
+                <p>La interfaz sigue las directrices de <strong>Material Design 3</strong>, con temas dinamicos, navegacion fluida y componentes modernos como <strong>RecyclerView</strong> con animaciones y <strong>SearchView</strong> para busquedas.</p>
+                <p>Entre las funcionalidades mas destacadas: validaciones en tiempo real en los formularios, sistema de busqueda con filtros dinamicos, alertas visuales cuando el stock esta por debajo del minimo configurado, y generacion de reportes en <strong>PDF</strong>.</p>
+            </section>
 
-        <section id="skills">
-            <h2 class="section-title">Especialización técnica</h2>
-            <div class="skills-visual">
-                <div class="skill-area">
-                    <h3><i class="fas fa-server"></i> Backend & Core</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar-item"><span class="skill-name">Java SE / EE</span><div class="bar-bg"><div class="bar-fill" style="--w:90%"></div></div><span class="skill-level">90%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">Spring Boot</span><div class="bar-bg"><div class="bar-fill" style="--w:75%"></div></div><span class="skill-level">75%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">SQL / MySQL</span><div class="bar-bg"><div class="bar-fill" style="--w:85%"></div></div><span class="skill-level">85%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">Arquitectura Hexagonal</span><div class="bar-bg"><div class="bar-fill" style="--w:60%"></div></div><span class="skill-level">60%</span></div>
-                    </div>
-                </div>
-                <div class="skill-area">
-                    <h3><i class="fas fa-desktop"></i> Frontend Desktop</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar-item"><span class="skill-name">JavaFX</span><div class="bar-bg"><div class="bar-fill" style="--w:80%"></div></div><span class="skill-level">80%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">Swing</span><div class="bar-bg"><div class="bar-fill" style="--w:90%"></div></div><span class="skill-level">90%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">UI/UX Design</span><div class="bar-bg"><div class="bar-fill" style="--w:70%"></div></div><span class="skill-level">70%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">MVC / Patrones</span><div class="bar-bg"><div class="bar-fill" style="--w:85%"></div></div><span class="skill-level">85%</span></div>
-                    </div>
-                </div>
-                <div class="skill-area">
-                    <h3><i class="fas fa-tools"></i> Entorno & Herramientas</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar-item"><span class="skill-name">Linux Mint</span><div class="bar-bg"><div class="bar-fill" style="--w:90%"></div></div><span class="skill-level">90%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">IntelliJ IDEA</span><div class="bar-bg"><div class="bar-fill" style="--w:95%"></div></div><span class="skill-level">95%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">Git / GitHub</span><div class="bar-bg"><div class="bar-fill" style="--w:85%"></div></div><span class="skill-level">85%</span></div>
-                        <div class="skill-bar-item"><span class="skill-name">Planificación</span><div class="bar-bg"><div class="bar-fill" style="--w:80%"></div></div><span class="skill-level">80%</span></div>
-                    </div>
-                </div>
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://github.com/ecalar/MiStock" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver repositorio</a>
+                <a href="../index.html" class="btn btn-primary"><i class="fas fa-home"></i> Volver al inicio</a>
             </div>
-        </section>
-
-        <section id="proceso">
-            <h2 class="section-title">Cómo trabajo</h2>
-            <div class="process-steps">
-                <div class="step"><span class="step-number">01</span><h3>Análisis y estructura</h3><p>Entiendo el problema, defino requisitos y dibujo el flujo de la aplicación.</p></div>
-                <div class="step"><span class="step-number">02</span><h3>Arquitectura y BD</h3><p>Diagrama de clases, modelo relacional, elección de patrones.</p></div>
-                <div class="step"><span class="step-number">03</span><h3>Desarrollo progresivo</h3><p>Primero el núcleo, luego funcionalidades. Commits pequeños.</p></div>
-                <div class="step"><span class="step-number">04</span><h3>Pruebas y pulido</h3><p>Revisión de errores, testeo manual y mejoras de interfaz.</p></div>
-            </div>
-        </section>
-
-        <section id="projects">
-    <h2 class="section-title">Proyectos destacados</h2>
-    <p class="section-subtitle">Cada proyecto tiene su propia página con detalles, capturas y decisiones técnicas.</p>
-    <div class="projects-grid">
-        <article class="glass-card project-card">
-            <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag-complete">Completado</span></div>
-            <h3>Customify</h3>
-            <p>Configurador 3D de productos personalizables. SaaS con Spring Boot y Three.js.</p>
-            <span class="tech-tag">Spring Boot</span><span class="tech-tag">Three.js</span><span class="tech-tag">Docker</span>
-            <a href="proyectos/customify.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-        </article>
-        <article class="glass-card project-card">
-            <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag-complete">Completado · Nota 8.3</span></div>
-            <h3>MiStock</h3>
-            <p>Gestión de inventario personalizable. Proyecto final de grado.</p>
-            <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span>
-            <a href="proyectos/mistock.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-        </article>
-        <article class="glass-card project-card">
-            <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag-complete">Completado</span></div>
-            <h3>FlowWork</h3>
-            <p>Plataforma de gestión de equipos con microservicios y chat en tiempo real.</p>
-            <span class="tech-tag">Spring Cloud</span><span class="tech-tag">RabbitMQ</span><span class="tech-tag">React</span>
-            <a href="proyectos/flowwork.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-        </article>
-        <article class="glass-card project-card">
-            <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag">En desarrollo</span></div>
-            <h3>CanaryPro</h3>
-            <p>Software para gestión de aviarios y cría de canarios.</p>
-            <span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">PostgreSQL</span>
-            <a href="proyectos/canarypro.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-        </article>
-        <article class="glass-card project-card">
-            <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag-complete">Completado</span></div>
-            <h3>App Recursos Humanos</h3>
-            <p>Gestión de empleados, nóminas y perfiles con JavaFX.</p>
-            <span class="tech-tag">JavaFX</span><span class="tech-tag">MVC</span><span class="tech-tag">MySQL</span>
-            <a href="proyectos/rrhh.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-        </article>
-        <article class="glass-card project-card">
-            <div class="project-header"><i class="far fa-folder-open folder-icon"></i><span class="status-tag-complete">Completado</span></div>
-            <h3>Gestión Carpintería</h3>
-            <p>Digitalización de talleres: control de stock, presupuestos y clientes.</p>
-            <span class="tech-tag">Java</span><span class="tech-tag">Swing</span><span class="tech-tag">MySQL</span>
-            <a href="proyectos/carpinteria.html" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-        </article>
+        </main>
     </div>
-    <h3 style="text-align:center; margin-top:4rem;">Otros proyectos</h3>
-    <ul class="other-projects-list">
-        <li><a href="proyectos/mihermandad.html">miHermandad</a></li>
-        <li><a href="proyectos/estudiantes-spring.html">Sistema Estudiantes Spring</a></li>
-        <li><a href="https://github.com/ecalar/SistemaContactos" target="_blank">Sistema Contactos</a></li>
-        <li><a href="https://github.com/ecalar/SistemaCuentasBancarias" target="_blank">Cuentas Bancarias</a></li>
-        <li><a href="https://github.com/ecalar/ArchivadorDigital" target="_blank">Archivador Digital</a></li>
-        <li><a href="https://github.com/ecalar/GestionEmpleados" target="_blank">Gestión Empleados</a></li>
-        <li><a href="https://github.com/ecalar/SistemasEstudiantesApp" target="_blank">Estudiantes App</a></li>
-        <li><a href="https://github.com/ecalar/TiendaLibros" target="_blank">Tienda Libros</a></li>
-        <li><a href="https://github.com/ecalar/AppCalculadora" target="_blank">Calculadora</a></li>
-        <li><a href="https://github.com/ecalar/CatalogoPeliculasApp" target="_blank">Catálogo Películas</a></li>
-        <li><a href="https://github.com/ecalar/VentaOrdenadoresApp" target="_blank">Venta Ordenadores</a></li>
-        <li><a href="https://github.com/ecalar/ListadoPersonasApp" target="_blank">Listado Personas</a></li>
-        <li><a href="https://github.com/ecalar/Sistema-de-Tareas" target="_blank">Sistema de Tareas</a></li>
-    </ul>
-</section>
-
-        <section id="contact">
-            <h2 class="section-title">Contacto directo</h2>
-            <div class="glass-card contact-container">
-                <p>¿Interesado en mi perfil para prácticas FCT o colaboración? Escríbeme.</p>
-                <form action="https://formspree.io/f/xqeokaoo" method="POST">
-                    <input type="text" name="nombre" placeholder="Tu nombre" required>
-                    <input type="email" name="email" placeholder="Tu email" required>
-                    <textarea name="mensaje" rows="5" placeholder="Tu mensaje"></textarea>
-                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-                </form>
-                <div class="direct-contact">
-                    <a href="mailto:enriquecalar@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="https://www.linkedin.com/in/enrique-cala-rodr%C3%ADguez-21032491/"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Enrique Cala Rodríguez · Construido con lógica y diseño.</p>
-        </footer>
-    </div>
-
-    <script src="js/main.js"></script>
 </body>
 </html>
