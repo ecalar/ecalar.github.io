@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ListaViva | Enrique Cala</title>
-    <meta name="description" content="App móvil de gestión inteligente de despensa y listas de la compra colaborativas. Android, Kotlin, Jetpack Compose y Firebase.">
+    <meta name="description" content="App móvil de gestión inteligente de despensa y listas de la compra colaborativas con IA. Android, Kotlin, Jetpack Compose, Retrofit y Firebase.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -32,9 +32,8 @@
         </nav>
         <main class="project-detail">
             <h1>ListaViva <span class="status-tag completed">Completado</span></h1>
-            <p class="project-subtitle">Gestión inteligente de despensa y listas de la compra compartidas · Aplicación Móvil Android</p>
+            <p class="project-subtitle">Gestión inteligente de despensa, listas colaborativas e Inteligencia Artificial · Aplicación Móvil Android</p>
 
-            <!-- Demo visual -->
             <section class="glass-card">
                 <h2><i class="fas fa-play-circle" style="color:var(--accent-blue); margin-right:0.5rem;"></i> Vista previa de la App</h2>
                 
@@ -44,7 +43,7 @@
                 <h3 style="margin-top:2rem; margin-bottom:0.5rem; color:var(--text-main);">Capturas de pantalla</h3>
                 <div class="gallery">
                     <a href="../assets/img/despensa.png" target="_blank">
-                        <img src="../assets/img/despensa.png" alt="Pantalla de gestión de despensa">
+                        <img src="../assets/img/despensa.png" alt="Pantalla de gestión de despensa y tarjetas interactivas">
                     </a>
                     <a href="../assets/img/estadisticas.png" target="_blank">
                         <img src="../assets/img/estadisticas.png" alt="Pantalla de control y estadísticas">
@@ -53,15 +52,14 @@
                 <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imágenes para verlas en grande.</p>
             </section>
 
-            <!-- Problema y solución -->
             <section class="glass-card">
                 <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
                 <p>Las familias, parejas o compañeros de piso suelen <strong>perder tiempo y dinero</strong> duplicando compras, olvidando qué productos tienen almacenados o dejando que caduquen alimentos en la despensa. La falta de una sincronización en tiempo real y de una visión clara del stock doméstico genera desorganización y compras innecesarias en el supermercado.</p>
+                
                 <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solución</h2>
-                <p><strong>ListaViva</strong> es una aplicación móvil desarrollada nativamente para Android que centraliza el control de la despensa y las listas de la compra en un entorno colaborativo. Permite compartir grupos mediante códigos de invitación, escanear códigos de barras de forma instantánea, llevar el control visual del estado de cada alimento y monitorizar el gasto estimado del hogar en tiempo real.</p>
+                <p><strong>ListaViva</strong> es una aplicación móvil desarrollada nativamente para Android que centraliza el control de la despensa y las listas de la compra en un entorno colaborativo. Incorpora un <strong>Chef de IA integrado mediante Groq API</strong> para sugerir recetas de aprovechamiento basadas en el stock actual, escáner de códigos de barras optimizado con OpenFoodFacts v2 y sincronización en tiempo real.</p>
             </section>
 
-            <!-- Tecnologías -->
             <section class="glass-card">
                 <h2>Tecnologías</h2>
                 <div style="margin-top:1rem;">
@@ -69,58 +67,54 @@
                     <span class="tech-tag">Jetpack Compose</span>
                     <span class="tech-tag">Material 3</span>
                     <span class="tech-tag">Android SDK</span>
-                    <span class="tech-tag">Firebase Firestore</span>
-                    <span class="tech-tag">Firebase Auth</span>
+                    <span class="tech-tag">Groq API (IA Llama / GPT)</span>
+                    <span class="tech-tag">Firebase Firestore & Auth</span>
                     <span class="tech-tag">Hilt (Dependency Injection)</span>
                     <span class="tech-tag">Coroutines & Flow</span>
-                    <span class="tech-tag">CameraX / ML Kit</span>
-                    <span class="tech-tag">Coil</span>
+                    <span class="tech-tag">CameraX & ML Kit</span>
+                    <span class="tech-tag">OpenFoodFacts API v2</span>
                     <span class="tech-tag">Git & GitHub</span>
                 </div>
             </section>
 
-            <!-- Arquitectura -->
             <section class="glass-card">
-                <h2>Arquitectura</h2>
+                <h2>Arquitectura y Decisiones Técnicas</h2>
                 <p>El proyecto sigue los estándares modernos de desarrollo Android recomendados por Google:</p>
                 <ul style="margin-top:1rem; margin-left:1.5rem; color:var(--text-muted); line-height:2;">
-                    <li><strong>Arquitectura MVVM (Model-View-ViewModel)</strong>: Separación estricta de responsabilidades entre la interfaz de usuario reactiva y la lógica de negocio.</li>
-                    <li><strong>Clean Architecture</strong>: Organización en capas (UI, Domain, Data) para asegurar la escalabilidad, legibilidad y facilidad de testing.</li>
-                    <li><strong>Inyección de Dependencias</strong>: Uso de Hilt para gestionar los ciclos de vida de los repositorios y servicios de Firebase de forma limpia.</li>
-                    <li><strong>Sincronización Cloud</strong>: Firestore Cloud Database para mantener los datos de la despensa y grupos perfectamente sincronizados entre múltiples dispositivos en tiempo real.</li>
+                    <li><strong>Arquitectura MVVM & Clean Architecture</strong>: Separación estricta de responsabilidades (UI, Domain, Data) asegurando escalabilidad y testing fluido.</li>
+                    <li><strong>Resiliencia de Modelos (Fallback)</strong>: Sistema automático en el cliente de IA que rota entre múltiples modelos (GPT-OSS, Llama, Mixtral) para evitar errores ante caídas de la API.</li>
+                    <li><strong>Caché Inteligente y Starter Pack</strong>: Precarga optimizada por lotes (Batch) en Firestore y caché local bajo demanda para evitar peticiones redundantes.</li>
+                    <li><strong>Seguridad de Credenciales</strong>: Ocultación de claves API mediante `local.properties` y `BuildConfig`, protegiendo el código en repositorios públicos.</li>
                 </ul>
             </section>
 
-            <!-- Funcionalidades -->
             <section class="glass-card">
                 <h2>Funcionalidades clave</h2>
                 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-top:1rem;">
                     <div>
-                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-boxes"></i> Despensa interactiva</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Control visual del stock con indicadores de estado dinámicos (Completo, Mitad, Casi agotado, Agotado) y cantidades ajustables.</p>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-utensils"></i> Chef de IA Inteligente</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Analiza la despensa actual, genera recetas de aprovechamiento y ofrece la opción de refrescar ideas evitando duplicados.</p>
                     </div>
                     <div>
-                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-qrcode"></i> Escáner de códigos</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Lectura rápida de códigos de barras integrada con la cámara para registrar nuevos productos o identificarlos al instante.</p>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-boxes"></i> Despensa interactiva</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Control visual con estados dinámicos, tarjetas desplegables para consultar códigos de barras y filtrado inteligente sin tildes.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-qrcode"></i> Escáner OpenFoodFacts v2</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Lectura rápida integrada con filtros para descartar códigos internos de supermercados de forma automática.</p>
                     </div>
                     <div>
                         <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-users"></i> Grupos compartidos</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Creación y unión a listas de la compra mediante códigos de invitación seguros sincronizados en la nube.</p>
-                    </div>
-                    <div>
-                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;"><i class="fas fa-chart-pie"></i> Control y estadísticas</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Resumen financiero del gasto estimado actual en la despensa, desglose por categorías y métricas de consumo.</p>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Creación y unión a listas colaborativas mediante códigos seguros sincronizados en tiempo real en la nube.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Estado actual -->
             <section class="glass-card">
                 <h2>Estado actual</h2>
-                <p>Aplicación <strong>completada y optimizada, abierta a actualizaciones</strong>, con diseño adaptado a Neo-Brutalismo sobre Material 3, soporte para vibración háptica y preparada para su despliegue y distribución en Google Play Store.</p>
+                <p>Aplicación <strong>completada, blindada y optimizada</strong>, con diseño adaptado a Neo-Brutalismo sobre Material 3, soporte para vibración háptica y preparada para su despliegue y distribución en Google Play Store.</p>
             </section>
 
-            <!-- Enlaces -->
             <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
                 <a href="https://github.com/ecalar/listaviva" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> Ver repositorio</a>
                 <a href="https://listaviva-f6be0.web.app" target="_blank" class="btn btn-outline"><i class="fas fa-shield-alt"></i> Política de privacidad</a>
