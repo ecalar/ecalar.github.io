@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivum | Enrique Cala</title>
+    <meta name="description" content="Aplicación de escritorio para gestionar y preservar el archivo documental de una hermandad. Java 17, Spring Boot 3 y JavaFX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .project-detail h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.25rem; }
+        .project-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .project-detail section { margin-bottom: 2rem; }
+        .gallery { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .gallery a { flex: 1 1 250px; overflow: hidden; border-radius: 12px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .gallery a:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .gallery img { width: 100%; display: block; }
+        .demo-gif { width: 100%; border-radius: 12px; border: 1px solid var(--glass-border); margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+
+    <div class="container">
+        <nav>
+            <a href="../index.html" class="logo">E<span>C.</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> Volver al portfolio
+                </a>
+            </div>
+        </nav>
+
+        <main class="project-detail">
+            <h1>Archivum <span class="status-tag completed">Completado</span></h1>
+            <p class="project-subtitle">Gestión y preservación del archivo documental de una hermandad · Aplicación de escritorio</p>
+
+            <!-- Capturas de pantalla -->
+            <section class="glass-card">
+                <h2><i class="fas fa-images" style="color:var(--accent-blue); margin-right:0.5rem;"></i> Capturas de pantalla</h2>
+                <div class="gallery">
+                    <a href="../assets/img/archivum-listado.png" target="_blank">
+                        <img src="../assets/img/archivum-listado.png" alt="Listado de documentos">
+                    </a>
+                    <a href="../assets/img/archivum-detalle.png" target="_blank">
+                        <img src="../assets/img/archivum-detalle.png" alt="Detalle de un documento">
+                    </a>
+                    <a href="../assets/img/archivum-formulario.png" target="_blank">
+                        <img src="../assets/img/archivum-formulario.png" alt="Formulario de subida de documentos">
+                    </a>
+                    <a href="../assets/img/archivum-busqueda.png" target="_blank">
+                        <img src="../assets/img/archivum-busqueda.png" alt="Búsqueda avanzada por filtros">
+                    </a>
+                    <a href="../assets/img/archivum-papelera.png" target="_blank">
+                        <img src="../assets/img/archivum-papelera.png" alt="Papelera con restauración">
+                    </a>
+                    <a href="../assets/img/archivum-backup.png" target="_blank">
+                        <img src="../assets/img/archivum-backup.png" alt="Panel de backup y restauración">
+                    </a>
+                </div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">Haz clic en las imagenes para verlas en grande.</p>
+            </section>
+
+            <!-- Problema y solucion -->
+            <section class="glass-card">
+                <h2><i class="fas fa-bullseye" style="color:var(--accent-blue); margin-right:0.5rem;"></i> El problema</h2>
+                <p>
+                    El secretario de una hermandad gestiona <strong>documentos centenarios en papel</strong>
+                    dispersos por estanterías, archivadores y cajones. Cada consulta obliga a manipular originales
+                    que se deterioran con el tiempo, y <strong>no existe un sistema</strong> para encontrar
+                    rápidamente un acta, un título o un expediente concreto. La memoria histórica de la
+                    hermandad corre el riesgo de perderse.
+                </p>
+
+                <h2 style="margin-top:2rem;"><i class="fas fa-lightbulb" style="color:var(--accent-cyan); margin-right:0.5rem;"></i> La solucion</h2>
+                <p>
+                    <strong>Archivum</strong> es una aplicación de escritorio que permite al secretario
+                    <strong>digitalizar, catalogar, buscar y preservar</strong> todos los documentos históricos
+                    y administrativos de la hermandad. Combina una base de datos local con el almacenamiento
+                    de los archivos digitales, y ofrece backup completo para garantizar la conservación a largo plazo.
+                </p>
+            </section>
+
+            <!-- Tecnologias -->
+            <section class="glass-card">
+                <h2>Tecnologias</h2>
+                <div style="margin-top:1rem;">
+                    <span class="tech-tag">Java 17</span>
+                    <span class="tech-tag">Spring Boot 3.2</span>
+                    <span class="tech-tag">JavaFX 21</span>
+                    <span class="tech-tag">H2 Database</span>
+                    <span class="tech-tag">Maven</span>
+                    <span class="tech-tag">CSS (JavaFX)</span>
+                </div>
+            </section>
+
+            <!-- Arquitectura -->
+            <section class="glass-card">
+                <h2>Arquitectura de la aplicación</h2>
+                <p>
+                    Archivum sigue una <strong>arquitectura por capas</strong> sobre Spring Boot, con una
+                    interfaz de escritorio construida con JavaFX. Toda la aplicación se empaqueta en un
+                    único JAR ejecutable, sin necesidad de servidor externo.
+                </p>
+                <ul style="margin-top:1rem; margin-left:1.5rem; color:var(--text-muted); line-height:2;">
+                    <li><strong>model</strong>: entidades <code>Documento</code> y <code>TipoDocumento</code>.</li>
+                    <li><strong>repository</strong>: acceso a datos con Spring Data JPA sobre H2.</li>
+                    <li><strong>service</strong>: lógica de negocio, gestión de archivos y sistema de backup/restauración.</li>
+                    <li><strong>ui</strong>: ventanas JavaFX con estilos CSS propios.</li>
+                </ul>
+                <p style="margin-top:1rem;">
+                    <strong>Persistencia local</strong>: base de datos H2 en archivo (<code>data/</code>),
+                    archivos digitales en <code>archivos/</code> y copias de seguridad en <code>backups/</code>.
+                    Todo autocontenido en la carpeta del proyecto, sin dependencias externas.
+                </p>
+                <p>
+                    <strong>Despliegue</strong>: se empaqueta como JAR ejecutable con Maven
+                    (<code>mvn clean package</code>) y se lanza con <code>java -jar archivum-1.0.0.jar</code>.
+                </p>
+            </section>
+
+            <!-- Funcionalidades -->
+            <section class="glass-card">
+                <h2>Funcionalidades clave</h2>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-top:1rem;">
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Subida de documentos</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Cada documento se cataloga con metadatos: título, tipo, fecha, descripción y ubicación física.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Búsqueda avanzada</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Búsqueda por texto, tipo de documento, rango de fechas o año aproximado.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Detalle y apertura</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Vista de detalle con todos los metadatos y apertura del archivo con el programa del sistema.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Edición y reemplazo</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Modificación de metadatos y sustitución del archivo sin perder el histórico del documento.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Papelera con restauración</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Los documentos eliminados van a papelera. Se pueden restaurar o eliminar definitivamente.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">Backup y restauración</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Copia de seguridad completa (base de datos + archivos digitales) y restauración desde un backup.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Estado actual -->
+            <section class="glass-card">
+                <h2>Estado actual</h2>
+                <p>
+                    Proyecto <strong>completado y funcional</strong>. Todas las funcionalidades descritas están
+                    implementadas: catalogación con metadatos, búsqueda avanzada, papelera con restauración,
+                    y sistema de backup completo. Empaquetado como JAR ejecutable con Maven, listo para
+                    usar sin instalación adicional más allá de Java 17.
+                </p>
+            </section>
+
+            <!-- Enlaces -->
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://github.com/ecalar/archivum" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i> Ver repositorio
+                </a>
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Volver al inicio
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
