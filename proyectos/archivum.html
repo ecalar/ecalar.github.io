@@ -38,7 +38,7 @@
 
         <main class="project-detail">
             <h1>Archivum <span class="status-tag completed">Completado</span></h1>
-            <p class="project-subtitle">Gestión y preservación del archivo documental de una hermandad · Aplicación de escritorio</p>
+            <p class="project-subtitle">Gestión, preservación y consulta del archivo documental de una hermandad · Aplicación de escritorio</p>
 
             <!-- Capturas de pantalla -->
             <section class="glass-card">
@@ -96,6 +96,8 @@
                     <span class="tech-tag">H2 Database</span>
                     <span class="tech-tag">Maven</span>
                     <span class="tech-tag">CSS (JavaFX)</span>
+                    <span class="tech-tag">Tess4J (OCR)</span>
+                    <span class="tech-tag">PBKDF2</span>
                 </div>
             </section>
 
@@ -164,7 +166,86 @@
                     y sistema de backup completo. Empaquetado como JAR ejecutable con Maven, listo para
                     usar sin instalación adicional más allá de Java 17.
                 </p>
+                <p style="margin-top:1rem;">
+                    La última iteración (v1.1) ha reforzado la <strong>seguridad</strong> (hashing PBKDF2,
+                    gestión de usuarios, roles diferenciados), la <strong>búsqueda</strong> (full-text sobre
+                    OCR con snippets contextuales) y la <strong>identidad visual</strong> (nombre y logo
+                    institucional configurables).
+                </p>
             </section>
+
+            <!-- Novedades -->
+<section class="glass-card">
+    <h2>
+        <i class="fas fa-rocket" style="color:var(--accent-cyan); margin-right:0.5rem;"></i>
+        Novedades y mejoras
+        <span class="status-tag completed" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">v1.1</span>
+    </h2>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+        Última iteración del proyecto: mejoras en seguridad, gestión de usuarios,
+        búsqueda inteligente en el contenido de los documentos y personalización
+        de la identidad institucional.
+    </p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
+
+        <!-- Seguridad y usuarios -->
+        <div>
+            <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">
+                <i class="fas fa-shield-halved" style="margin-right:0.35rem;"></i>
+                Seguridad y usuarios
+            </h4>
+            <ul style="margin-left:1rem; color:var(--text-muted); font-size:0.9rem; line-height:1.9;">
+                <li>Contraseñas hasheadas con <strong>PBKDF2</strong> (sal aleatoria + 120 000 iteraciones).</li>
+                <li>Migración transparente: contraseñas antiguas en texto plano se convierten en su primer login.</li>
+                <li>Gestión completa de usuarios desde la app: alta, baja y cambio de contraseña.</li>
+                <li>Salvaguardas: no se puede eliminar el último administrador ni la propia cuenta.</li>
+            </ul>
+        </div>
+
+        <!-- Roles diferenciados -->
+        <div>
+            <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">
+                <i class="fas fa-user-tag" style="margin-right:0.35rem;"></i>
+                Roles diferenciados
+            </h4>
+            <ul style="margin-left:1rem; color:var(--text-muted); font-size:0.9rem; line-height:1.9;">
+                <li><strong>Administrador</strong>: dashboard con métricas, papelera, backup y ajustes completos.</li>
+                <li><strong>Consultor</strong>: dashboard de consulta con tarjetas por categoría, sin acceso a zonas sensibles.</li>
+                <li>Pestañas de Ajustes filtradas según el rol del usuario.</li>
+                <li>Vista de categoría con tabla propia, buscador y filtros.</li>
+            </ul>
+        </div>
+
+        <!-- Búsqueda inteligente -->
+        <div>
+            <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">
+                <i class="fas fa-magnifying-glass-chart" style="margin-right:0.35rem;"></i>
+                Búsqueda inteligente
+            </h4>
+            <ul style="margin-left:1rem; color:var(--text-muted); font-size:0.9rem; line-height:1.9;">
+                <li>Búsqueda <strong>full-text sobre el contenido OCR</strong> de los PDFs e imágenes.</li>
+                <li>Query combinada: texto + tipo + rango de fechas + año aproximado en una sola búsqueda.</li>
+                <li>Fragmento contextual con la coincidencia resaltada al pasar el ratón por el título.</li>
+                <li>Botón "Re-indexar OCR" para procesar documentos antiguos con barra de progreso.</li>
+            </ul>
+        </div>
+
+        <!-- Personalización -->
+        <div>
+            <h4 style="color:var(--accent-cyan); margin-bottom:0.5rem;">
+                <i class="fas fa-palette" style="margin-right:0.35rem;"></i>
+                Personalización institucional
+            </h4>
+            <ul style="margin-left:1rem; color:var(--text-muted); font-size:0.9rem; line-height:1.9;">
+                <li>Nombre de la hermandad configurable y visible en el dashboard.</li>
+                <li>Logo institucional personalizable con selector de archivo.</li>
+                <li>Cabecera del dashboard: título + logo alineados a los extremos.</li>
+                <li>Fallback automático al icono de la app si no hay logo configurado.</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
             <!-- Enlaces -->
             <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
